@@ -5,7 +5,6 @@ import {
   Cpu, Code2, Globe, ArrowRight, Zap, Database, Slack
 } from 'lucide-react';
 
-// --- DATA FOR THE CROSS-STRIP ---
 const integrations = [
   { icon: <Slack size={16} />, color: "#4A154B" },
   { icon: <Zap size={16} />, color: "#F7DF1E" },
@@ -19,32 +18,17 @@ const ContributionNexus = () => {
   return (
     <section className="relative py-32 px-6 bg-[#020202] overflow-hidden">
       
-      {/* --- BACKGROUND DATA STRIP (The Cross Loop) --- */}
-      <div className="absolute top-1/4 -left-10 w-[120%] opacity-20 -rotate-3 pointer-events-none">
-        <div className="relative w-full h-[1px] bg-zinc-800">
-           <motion.div 
-            animate={{ x: [0, "-50%"] }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="flex items-center gap-12 whitespace-nowrap py-4"
-          >
-            {[...integrations, ...integrations, ...integrations].map((item, i) => (
-              <div key={i} className="flex items-center gap-2 text-zinc-500" style={{ color: item.color }}>
-                {item.icon}
-                <span className="text-[10px] font-mono tracking-tighter uppercase">Nexus_Node_{i}</span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* --- HEADER --- */}
-        <div className="flex flex-col items-center text-center mb-24">
+        {/* Added w-full and justify-center to ensure the flex children align to the true center */}
+        <div className="flex flex-col items-center justify-center text-center mb-24 w-full">
+          
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-3 mb-6 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md"
+            /* Added mx-auto and justify-center here for the pill itself */
+            className="flex items-center justify-center gap-3 mb-6 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mx-auto"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400">Contribution Protocol v2.0</span>
@@ -54,8 +38,8 @@ const ContributionNexus = () => {
             Scale the <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Registry.</span>
           </h2>
 
-          {/* --- SUBMISSION CALL TO ACTION (The new text) --- */}
-          <div className="relative overflow-hidden w-full max-w-lg mb-8 group">
+          {/* --- SUBMISSION CALL TO ACTION --- */}
+          <div className="relative overflow-hidden w-full max-w-lg mb-8 group mx-auto">
             <div className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent top-0" />
             <div className="py-3 flex flex-col items-center">
               <p className="text-zinc-500 text-xs md:text-sm uppercase tracking-widest font-medium">
@@ -68,7 +52,7 @@ const ContributionNexus = () => {
             <div className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent bottom-0" />
           </div>
 
-          <p className="max-w-xl text-zinc-500 text-xs uppercase tracking-[0.2em] leading-relaxed opacity-60">
+          <p className="max-w-xl text-zinc-500 text-xs uppercase tracking-[0.2em] leading-relaxed opacity-60 mx-auto">
             Standardizing the world's SaaS infrastructure through open-source collaboration.
           </p>
         </div>
@@ -101,7 +85,6 @@ const ContributionNexus = () => {
                 <CodeLine line="06" text={<>{'}'}</>} />
               </div>
 
-              {/* Glowing Scan Line Animation */}
               <motion.div 
                 animate={{ top: ["0%", "100%", "0%"] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -111,9 +94,9 @@ const ContributionNexus = () => {
               <div className="mt-auto pt-8">
                 <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
                    <div className="flex -space-x-2">
-                      {[1,2,3].map(i => (
-                        <div key={i} className="w-6 h-6 rounded-full border-2 border-[#080808] bg-zinc-700" />
-                      ))}
+                     {[1,2,3].map(i => (
+                       <div key={i} className="w-6 h-6 rounded-full border-2 border-[#080808] bg-zinc-700" />
+                     ))}
                    </div>
                    <span className="text-[10px] text-zinc-500 font-mono italic">+142 recent submissions</span>
                 </div>
@@ -124,37 +107,12 @@ const ContributionNexus = () => {
           {/* B. THE PIPELINE NODES (RIGHT) */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <PipelineNode 
-                icon={<GitFork className="text-blue-400" />}
-                step="01"
-                title="Branch Fork"
-                desc="Generate your secure environment of the core registry."
-                color="blue"
-              />
-              <PipelineNode 
-                icon={<Code2 className="text-purple-400" />}
-                step="02"
-                title="Asset Injection"
-                desc="Standardize UI or SaaS components using our CLI."
-                color="purple"
-              />
-              <PipelineNode 
-                icon={<GitPullRequest className="text-green-400" />}
-                step="03"
-                title="Audit Stream"
-                desc="AI-driven performance & code quality verification."
-                color="green"
-              />
-              <PipelineNode 
-                icon={<Globe className="text-pink-400" />}
-                step="04"
-                title="Global Sync"
-                desc="Deployment to the hub for 50k+ developers."
-                color="pink"
-              />
+              <PipelineNode icon={<GitFork className="text-blue-400" />} step="01" title="Branch Fork" desc="Generate your secure environment." color="blue" />
+              <PipelineNode icon={<Code2 className="text-purple-400" />} step="02" title="Asset Injection" desc="Standardize UI components using our CLI." color="purple" />
+              <PipelineNode icon={<GitPullRequest className="text-green-400" />} step="03" title="Audit Stream" desc="AI-driven performance verification." color="green" />
+              <PipelineNode icon={<Globe className="text-pink-400" />} step="04" title="Global Sync" desc="Deployment to the hub for 50k+ devs." color="pink" />
             </div>
             
-            {/* LARGE ACTION BAR */}
             <motion.button 
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
@@ -181,14 +139,10 @@ const ContributionNexus = () => {
   );
 };
 
-// --- HELPER COMPONENTS ---
-
 const CodeLine = ({ line, text, indent = false }) => (
   <div className="flex gap-4 group/line">
     <span className="text-zinc-800 text-[10px] group-hover/line:text-zinc-600 transition-colors w-4">{line}</span>
-    <p className={`text-zinc-400 transition-colors ${indent ? 'pl-6' : ''}`}>
-      {text}
-    </p>
+    <p className={`text-zinc-400 transition-colors ${indent ? 'pl-6' : ''}`}>{text}</p>
   </div>
 );
 
@@ -209,11 +163,7 @@ const PipelineNode = ({ icon, step, title, desc, color }) => {
         <span className="font-mono text-[9px] text-zinc-700 font-bold group-hover:text-zinc-400">NOD_{step}</span>
       </div>
       <h4 className="text-lg font-bold text-white mb-2 tracking-tight uppercase">{title}</h4>
-      <p className="text-[11px] leading-relaxed text-zinc-500 group-hover:text-zinc-300 transition-colors">
-        {desc}
-      </p>
-      
-      {/* Decorative Lines */}
+      <p className="text-[11px] leading-relaxed text-zinc-500 group-hover:text-zinc-300 transition-colors">{desc}</p>
       <svg className="absolute bottom-6 right-6 w-16 h-16 opacity-0 group-hover:opacity-10 transition-opacity duration-700" viewBox="0 0 100 100">
         <path d="M0 100 L50 100 L50 50 L100 50" fill="none" stroke="currentColor" strokeWidth="1" className="text-white" />
       </svg>

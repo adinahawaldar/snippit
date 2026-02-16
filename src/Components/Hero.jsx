@@ -15,8 +15,10 @@ const Hero = () => {
   return (
     <section 
       ref={containerRef}
-      // Added pt-24 to ensure it doesn't stick to the navbar on mobile
-      className="relative min-h-screen w-full bg-[#030303] flex items-center justify-center overflow-hidden pt-24 pb-12 md:pt-0"
+      /* MODIFIED: pt-32 for mobile, md:pt-40 for desktop 
+         This ensures a nice gap below your floating Navbar.
+      */
+      className="relative min-h-screen w-full bg-[#030303] flex items-center justify-center overflow-hidden pt-32 pb-12 md:pt-27"
     >
       {/* --- THE MASTER GRID SYSTEM --- */}
       <div className="absolute inset-0 z-0">
@@ -49,15 +51,14 @@ const Hero = () => {
         />
       </div>
 
-      {/* --- FLOATING TECH ELEMENTS --- 
-          Hidden on 'sm' and 'md' to prevent overlapping with text
-      */}
+      {/* --- FLOATING TECH ELEMENTS --- */}
       <div className="absolute inset-0 z-10 pointer-events-none hidden lg:block">
-        <motion.div style={{ y: y1 }} className="absolute top-[20%] left-[5%] opacity-40">
+        {/* Adjusted top-[30%] so they don't collide with the navbar links */}
+        <motion.div style={{ y: y1 }} className="absolute top-[30%] left-[5%]">
            <CodeNode label="deployment.yaml" code="replicaCount: 3" />
         </motion.div>
         
-        <motion.div style={{ y: y2 }} className="absolute bottom-[30%] right-[8%] opacity-40">
+        <motion.div style={{ y: y2 }} className="absolute bottom-[25%] right-[8%]">
            <CodeNode label="auth.ts" code="encrypt(token)" />
         </motion.div>
       </div>
@@ -71,7 +72,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-6 md:mb-10 flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
         >
-          <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+          <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
           <span className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] font-bold text-zinc-500">
             System Protocol v1.0.4
           </span>
@@ -84,7 +85,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter text-white leading-[1.1]"
           >
-            Engineering <span className="text-zinc-500 italic font-serif">simplicity</span>
+            Designing <span className="text-zinc-500 italic font-serif">simplicity</span>
           </motion.h1>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -101,8 +102,8 @@ const Hero = () => {
             transition={{ delay: 0.3 }}
             className="mt-4 md:mt-0 max-w-2xl mx-auto text-zinc-400 text-base md:text-xl font-light leading-relaxed tracking-tight"
           >
-            An open-source hub for high-performance components, 
-            AI integration patterns, and production-ready boilerplate.
+            Access curated UI resources, SaaS inspirations, open-source projects, 
+            AI tools, and publications all in one powerful developer hub.
           </motion.p>
         </div>
 
@@ -114,32 +115,31 @@ const Hero = () => {
           className="mt-10 md:mt-12 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
         >
           <button className="group relative flex items-center justify-center gap-2 px-8 md:px-10 py-4 bg-white text-black text-xs md:text-sm font-bold rounded-full transition-transform hover:scale-105 active:scale-95">
-            Explore Documentation <ArrowUpRight size={18} />
+            Explore Resources <ArrowUpRight size={18} />
           </button>
-          <button className="px-8 md:px-10 py-4 bg-transparent border border-white/10 text-white text-xs md:text-sm font-bold rounded-full hover:bg-white/5 transition-colors tracking-widest uppercase">
+          <button className="px-8 md:px-10 py-4 bg-white/8 border border-white/10 text-white text-xs md:text-sm font-bold rounded-full hover:bg-white/5 transition-colors tracking-widest uppercase">
             Repository
           </button>
         </motion.div>
-      </div>
-
-      {/* Side HUD Decor - Hidden on small screens */}
-      <div className="absolute left-6 md:left-10 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 opacity-20">
-          <div className="h-40 w-[1px] bg-gradient-to-b from-transparent via-white to-transparent" />
-          <span className="rotate-90 text-[10px] font-mono text-white tracking-[1em]">SNIPPIT</span>
-          <div className="h-40 w-[1px] bg-gradient-to-b from-white via-white to-transparent" />
       </div>
     </section>
   );
 };
 
 const CodeNode = ({ label, code }) => (
-  <div className="p-3 bg-zinc-900/50 border border-white/10 rounded-lg backdrop-blur-md">
-    <div className="flex gap-1 mb-2">
-      <div className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
-      <div className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
+  <div className="relative p-4 bg-[#0a0a0a]/80 border border-white/20 rounded-xl backdrop-blur-xl shadow-[0_0_30px_rgba(0,0,0,0.5)] group transition-all hover:border-blue-500/50">
+    <div className="absolute inset-0 rounded-xl border border-white/5 pointer-events-none" />
+    
+    <div className="flex gap-1.5 mb-3">
+      <div className="w-2 h-2 rounded-full bg-zinc-800" />
+      <div className="w-2 h-2 rounded-full bg-zinc-800" />
+      <div className="w-2 h-2 rounded-full bg-zinc-800" />
     </div>
-    <p className="text-[10px] font-mono text-zinc-500 mb-1 tracking-tighter underline uppercase">{label}</p>
-    <p className="text-[11px] font-mono text-blue-400/80">{code}</p>
+    <p className="text-[9px] font-mono text-zinc-400 mb-1 tracking-wider uppercase font-bold opacity-70">{label}</p>
+    <div className="flex items-center gap-2">
+      <span className="text-blue-500 font-mono text-xs opacity-50">&gt;</span>
+      <p className="text-[12px] font-mono text-blue-400 font-medium">{code}</p>
+    </div>
   </div>
 );
 
