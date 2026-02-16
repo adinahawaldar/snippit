@@ -45,7 +45,7 @@ const Navbar = () => {
           <NavLink label="Home" to="/" />
           <NavLink label="Resources" to="/resources" />
           <NavLink label="AI Toolkit" to="/ai-toolkit" />
-          <NavLink label="Publications" to="/publications" />
+          <NavLink label="Publications" to="/publication" />
         </div>
 
         {/* RIGHT ACTIONS */}

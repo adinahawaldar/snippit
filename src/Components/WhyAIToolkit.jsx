@@ -128,10 +128,7 @@ const WhyAIToolkit = () => {
           transition={{ delay: 0.8 }}
           className="mt-40 flex flex-col items-center"
         >
-          <div className="h-20 w-px bg-gradient-to-b from-blue-500/50 to-transparent mb-8" />
-          <p className="text-[11px] font-mono text-zinc-600 uppercase tracking-[0.3em]">
-            System integration complete
-          </p>
+          
         </motion.div>
       </div>
     </section>

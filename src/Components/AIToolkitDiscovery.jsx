@@ -148,11 +148,10 @@ const AIToolkitDiscovery = () => {
 
   return (
     <div className="bg-[#020202] min-h-screen text-white font-sans selection:bg-blue-500/30">
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03]" 
-           style={{ backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
+      
 
       {/* --- TOP NAV --- */}
-      <nav className="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-xl border-b border-white/5 bg-black/40">
+      {/* <nav className="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-xl border-b border-white/5 bg-black/40">
         <div className="flex items-center gap-6">
           <button onClick={() => window.history.back()} className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-white transition-colors">
             ← Exit Registry
@@ -167,7 +166,7 @@ const AIToolkitDiscovery = () => {
           <Search size={14} className="text-zinc-500" />
           <input placeholder="Filter tools..." className="bg-transparent border-none focus:ring-0 text-[11px] w-40" />
         </div>
-      </nav>
+      </nav> */}
 
       <div className="flex pt-20">
         {/* --- SIDEBAR --- */}
@@ -257,7 +256,7 @@ const AIToolkitDiscovery = () => {
                     {limit === 10 ? (
                         <button onClick={() => setLimit(activeTools.length)} 
                                 className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-blue-500 hover:text-white transition-all bg-blue-500/5 px-8 py-4 rounded-2xl border border-blue-500/20 hover:bg-blue-500 hover:border-blue-500">
-                        <Plus size={14} /> Load {activeTools.length - 10} More Resources
+                        <Plus size={14} /> Load More 
                         </button>
                     ) : (
                         <button onClick={() => setLimit(10)} 

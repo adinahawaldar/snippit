@@ -21,7 +21,7 @@ const Home = () => {
       <Explorer />
       <OpenSourceContribution />
       <CTA />
-      <CreatorProfile />
+      {/* <CreatorProfile /> */}
       <Footer />
     </>
   )
