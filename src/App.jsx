@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import AIToolkit from './pages/AIToolkit'
+import Home from './Pages/Home'
+import AIToolkit from './Pages/AIToolKit'
 
 const App = () => {
   return (
