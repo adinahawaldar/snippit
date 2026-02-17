@@ -9,7 +9,7 @@ export const Publication = () => {
   return (
     <>
     <Navbar/>
-    <PublicationsHero/>
+    {/* <PublicationsHero/> */}
     <ResearchPublication/>
           <CTA />
 

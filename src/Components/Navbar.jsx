@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Terminal, Menu, X, BookOpen, 
-  Cpu, Newspaper, Home, Zap 
+import {
+  Terminal, Menu, X, BookOpen,
+  Cpu, Newspaper, Home, Zap
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -25,12 +25,11 @@ const Navbar = () => {
           relative pointer-events-auto flex items-center justify-between
           px-4 py-2 rounded-2xl border transition-all duration-500 w-full
           ${scrolled || mobileOpen
-            ? 'max-w-4xl bg-[#0a0a0a]/80 border-white/10 backdrop-blur-xl shadow-2xl' 
+            ? 'max-w-4xl bg-[#0a0a0a]/80 border-white/10 backdrop-blur-xl shadow-2xl'
             : 'max-w-7xl bg-transparent border-transparent'
           }
         `}
       >
-        {/* LEFT: BRAND */}
         <Link to="/" className="flex items-center gap-3 z-[110] min-w-[120px]">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]">
             <Terminal size={18} strokeWidth={3} />
@@ -40,7 +39,6 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* CENTER NAV (Desktop) */}
         <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-1 bg-white/10 p-1 rounded-xl border border-white/10 backdrop-blur-lg shadow-xl">
           <NavLink label="Home" to="/" />
           <NavLink label="Resources" to="/resources" />
@@ -48,17 +46,15 @@ const Navbar = () => {
           <NavLink label="Publications" to="/publication" />
         </div>
 
-        {/* RIGHT ACTIONS */}
         <div className="flex items-center justify-end gap-2 z-[110] min-w-[120px]">
           <Link
-            to="/resources"
+            to="https://github.com/adinahawaldar/snippit"
             className="hidden sm:flex px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-widest rounded-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.2)] active:scale-95"
           >
-            Explore
+            Contribute
           </Link>
 
-          {/* Hamburger */}
-          <button 
+          <button
             className="md:hidden p-2 text-white bg-white/10 rounded-lg border border-white/10 hover:bg-white/20 transition-colors backdrop-blur-md"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
@@ -66,7 +62,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* MOBILE MENU */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
@@ -76,10 +71,10 @@ const Navbar = () => {
               className="absolute top-[calc(100%+8px)] left-0 right-0 p-3 bg-white/5 border border-white/10 rounded-2xl md:hidden z-[101] shadow-2xl backdrop-blur-2xl overflow-hidden"
             >
               <div className="grid grid-cols-1 gap-1">
-                <MobileLink to="/" icon={<Home size={16}/>} label="Home" />
-                <MobileLink to="/resources" icon={<BookOpen size={16}/>} label="Resources" />
-                <MobileLink to="/ai-toolkit" icon={<Cpu size={16}/>} label="AI Toolkit" />
-                <MobileLink to="/publications" icon={<Newspaper size={16}/>} label="Publications" />
+                <MobileLink to="/" icon={<Home size={16} />} label="Home" />
+                <MobileLink to="/resources" icon={<BookOpen size={16} />} label="Resources" />
+                <MobileLink to="/ai-toolkit" icon={<Cpu size={16} />} label="AI Toolkit" />
+                <MobileLink to="/publications" icon={<Newspaper size={16} />} label="Publications" />
 
                 <div className="h-px bg-white/10 my-2 mx-2" />
 
@@ -101,7 +96,6 @@ const Navbar = () => {
   );
 };
 
-// Desktop NavLink
 const NavLink = ({ label, to }) => (
   <Link
     to={to}
@@ -111,7 +105,6 @@ const NavLink = ({ label, to }) => (
   </Link>
 );
 
-// Mobile NavLink
 const MobileLink = ({ icon, label, to }) => (
   <Link
     to={to}

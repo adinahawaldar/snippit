@@ -1,137 +1,150 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, LayoutTemplate, Zap, Terminal, Fingerprint, Activity } from 'lucide-react';
+import { BookOpen, LayoutTemplate, Zap, Fingerprint, Activity, MousePointer2 } from 'lucide-react';
 
 const ValuePropSection = () => {
   const values = [
     {
-      id: "RES_001",
+      id: "RES_01",
       title: "Curated Resources",
-      desc: "A hand-picked selection of developer assets, libraries, and high-performance snippets in one central registry.",
-      icon: <BookOpen size={20} className="text-purple-400" />,
-      tag: "STABLE_RELEASE"
+      desc: "Hand-picked developer assets and high-performance snippets in one central registry.",
+      icon: <BookOpen size={16} className="text-purple-400" />,
+      tag: "STABLE"
     },
     {
-      id: "INS_002",
-      title: "UI & Code Inspiration",
-      desc: "Ready-to-deploy components and architectural patterns designed to spark creativity and save hours of setup.",
-      icon: <LayoutTemplate size={20} className="text-blue-400" />,
-      tag: "FRONTEND_CORE"
+      id: "INS_02",
+      title: "UI Inspiration",
+      desc: "Ready-to-deploy components designed to spark creativity and save hours of setup.",
+      icon: <LayoutTemplate size={16} className="text-blue-400" />,
+      tag: "CORE"
     },
     {
-      id: "ACC_003",
+      id: "ACC_03",
       title: "Project Acceleration",
-      desc: "Battle-tested tools and technical publications focused on turning concepts into production-ready software.",
-      icon: <Zap size={20} className="text-amber-400" />,
-      tag: "FAST_PATH"
+      desc: "Battle-tested tools focused on turning concepts into production-ready software.",
+      icon: <Zap size={16} className="text-amber-400" />,
+      tag: "FAST"
     }
   ];
 
+  // Animation variants for cleaner code
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
   return (
-    <section className="w-full bg-[#020202] py-32 px-6 relative overflow-hidden font-sans">
+    <section className="w-full bg-[#050505] py-20 px-6 relative font-sans">
       
-      {/* --- BACKGROUND SYSTEM OVERLAY --- */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none font-mono text-[10px] text-white p-4 leading-none select-none">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <div key={i} className="mb-2 uppercase tracking-tighter">
-            SYS_BOOT_SEQUENCE_{i}... LOADED // CACHE_STATUS: OK // HUB_ID: SNIPPIT_REGISTRY_V2
-          </div>
-        ))}
-      </div>
+      {/* Static Background Glow (No animation) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-purple-500/5 blur-[80px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10">
         
-        {/* --- SECTION HEADER --- */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-          <div className="max-w-xl">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
-              <span className="font-mono text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em]">Value_Proposition_Protocol</span>
+        {/* --- MICRO-HEADER --- */}
+        <header className="mb-12 border-b border-zinc-900 pb-8">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-2 mb-4"
+          >
+            <div className="px-1.5 py-0.5 rounded bg-purple-500/10 border border-purple-500/20 text-[7px] font-black uppercase tracking-[0.3em] text-purple-500">
+              Value_Prop_v2.0
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter uppercase leading-[0.9]">
-              The <span className="text-zinc-500">Snippit</span> <br /> 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500 italic">Advantage.</span>
-            </h2>
+          </motion.div>
+          
+          <div className="flex flex-col md:flex-row justify-between items-end gap-4">
+            <motion.h2 
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold tracking-tighter text-white leading-tight"
+            >
+              The Snippit <span className="text-zinc-700 italic">Advantage.</span>
+            </motion.h2>
+            <div className="hidden lg:block pb-1">
+              
+            </div>
           </div>
-          <div className="hidden md:block">
-            <Fingerprint size={60} className="text-zinc-800" />
-          </div>
-        </div>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-4 text-zinc-500 text-sm leading-relaxed font-medium max-w-md"
+          >
+            Precision-engineered frameworks designed to eliminate friction and scale execution.
+          </motion.p>
+        </header>
 
-        {/* --- SYSTEM CARD STACK --- */}
-        <div className="grid grid-cols-1 gap-4">
-          {values.map((item, index) => (
+        {/* --- COMPACT CARD STACK --- */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-2"
+        >
+          {values.map((item) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative flex flex-col md:flex-row items-stretch border border-white/5 bg-[#050505] rounded-xl overflow-hidden hover:border-white/10 transition-all duration-300"
+              variants={itemVariants}
+              whileHover={{ x: 4, borderColor: "rgba(168, 85, 247, 0.2)" }}
+              className="group relative flex flex-col md:flex-row items-stretch border border-zinc-900 bg-[#080808] rounded-lg overflow-hidden transition-all duration-300 cursor-default"
             >
-              {/* Left ID Bar */}
-              <div className="w-full md:w-16 bg-zinc-900/50 flex items-center justify-center py-4 md:py-0 border-b md:border-b-0 md:border-r border-white/5">
-                <span className="font-mono text-[10px] text-zinc-600 -rotate-0 md:-rotate-90 whitespace-nowrap uppercase tracking-widest">
+              {/* Ultra-Slim ID Bar */}
+              <div className="w-full md:w-10 bg-zinc-900/20 flex items-center justify-center py-2 md:py-0 border-b md:border-b-0 md:border-r border-zinc-900">
+                <span className="font-mono text-[8px] text-zinc-800 -rotate-0 md:-rotate-90 uppercase tracking-widest">
                   {item.id}
                 </span>
               </div>
 
               {/* Main Content */}
-              <div className="flex-1 p-8 flex flex-col md:flex-row md:items-center gap-8">
-                {/* Icon Pod */}
-                <div className="w-12 h-12 flex-shrink-0 bg-white/5 rounded-lg border border-white/5 flex items-center justify-center transition-all group-hover:bg-white/10 group-hover:border-white/20">
+              <div className="flex-1 p-5 flex flex-col md:flex-row md:items-center gap-5">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="w-10 h-10 flex-shrink-0 bg-zinc-900 rounded border border-zinc-800 flex items-center justify-center transition-all group-hover:bg-purple-500/5"
+                >
                   {item.icon}
-                </div>
+                </motion.div>
 
                 {/* Text Body */}
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-xl font-bold text-white uppercase tracking-tight">{item.title}</h3>
-                    <span className="font-mono text-[8px] px-1.5 py-0.5 border border-white/10 text-zinc-500 rounded uppercase">
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <h3 className="text-sm font-bold text-zinc-200 uppercase tracking-wide group-hover:text-purple-400 transition-colors">
+                      {item.title}
+                    </h3>
+                    <div className="px-1.5 py-0.5 border border-zinc-800 text-zinc-700 rounded-[3px] text-[6px] font-mono uppercase">
                       {item.tag}
-                    </span>
+                    </div>
                   </div>
-                  <p className="text-zinc-500 text-sm md:text-base max-w-2xl group-hover:text-zinc-400 transition-colors">
+                  <p className="text-zinc-500 text-xs max-w-xl leading-snug">
                     {item.desc}
                   </p>
                 </div>
 
-                {/* Status Indicator */}
-                <div className="hidden lg:flex items-center gap-4 text-zinc-800">
-                  <Activity size={24} className="group-hover:text-purple-500/50 transition-colors" />
+                {/* Micro Trigger Icon (Hidden on Mobile) */}
+                <div className="hidden lg:flex items-center text-zinc-900 group-hover:text-purple-500/20 transition-colors">
+                  <MousePointer2 size={12} />
                 </div>
               </div>
-
-              {/* Scanning Line Effect (Vertical) */}
-              <motion.div 
-                animate={{ left: ["-10%", "110%"] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                className="absolute top-0 w-20 h-full bg-gradient-to-r from-transparent via-white/[0.02] to-transparent pointer-events-none"
-              />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* --- SYSTEM FOOTER --- */}
-        <div className="mt-12 flex flex-col md:flex-row justify-between items-center font-mono text-[9px] text-zinc-600 gap-4">
-          <div className="flex items-center gap-4">
-            <span>[ SYSTEM STATUS: OPTIMAL ]</span>
-            <span>[ LATENCY: 14MS ]</span>
-          </div>
-          <div className="text-center md:text-right uppercase tracking-widest">
-            Accelerating production cycles since 2024_rev_03
-          </div>
-        </div>
+        
       </div>
     </section>
   );
 };
-
-const CodeLine = ({ line, text }) => (
-  <div className="flex gap-4 font-mono text-[11px] mb-1">
-    <span className="text-zinc-800">{line}</span>
-    <span className="text-zinc-500">{text}</span>
-  </div>
-);
 
 export default ValuePropSection;
