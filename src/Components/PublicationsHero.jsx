@@ -6,14 +6,12 @@ const ResearchBrief = () => {
   return (
     <div className="bg-[#050505] min-h-screen py-20 px-6 relative overflow-hidden">
       
-      {/* --- BACKGROUND BLOOM --- */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-500/5 blur-[120px]" />
       </div>
 
       <main className="max-w-4xl mx-auto relative z-10">
         
-        {/* --- HEADING (Matched to License Page) --- */}
         <header className="mb-12 border-b border-zinc-900 pb-12">
           <motion.div 
             initial={{ opacity: 0, y: 10 }} 
@@ -33,7 +31,6 @@ const ResearchBrief = () => {
           </p>
         </header>
 
-        {/* --- COMPACT RESEARCH BOX --- */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -70,7 +67,6 @@ const ResearchBrief = () => {
           </div>
         </motion.div>
 
-        {/* --- FOOTER REGISTRY --- */}
         <footer className="mt-20 pt-8 border-t border-zinc-900 flex justify-between items-center opacity-30">
           <div className="flex items-center gap-3">
             <Hash size={16} className="text-zinc-500" />

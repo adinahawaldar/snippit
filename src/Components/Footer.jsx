@@ -13,13 +13,10 @@ const Footer = () => {
 
   return (
     <footer className="relative w-full py-20 px-6 overflow-hidden">
-      {/* 1. TRANSITION LAYER */}
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[#050505] z-0" />
       
-      {/* 2. MAIN BACKGROUND */}
       <div className="absolute inset-0 bg-[#050505] z-[-1]" />
 
-      {/* 3. GRID OVERLAY */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
            style={{ backgroundImage: `radial-gradient(#3b82f6 1px, transparent 0)`, backgroundSize: '30px 30px' }} />
 
@@ -27,7 +24,6 @@ const Footer = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           
-          {/* BRAND BLOCK */}
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-8 group">
               <div className="h-10 w-10 flex items-center justify-center bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-xl group-hover:border-blue-500/50 transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)]">
@@ -51,7 +47,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* DYNAMIC LINK COLUMNS */}
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12">
             <FooterColumn title="Interfaces" links={[
                 { label: 'SaaS Startups', to: '/saasstarter' }, 
@@ -71,7 +66,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* --- DYNAMIC STATUS BAR --- */}
         <div className="relative p-[1px] rounded-2xl bg-gradient-to-r from-blue-500/20 via-zinc-800 to-amber-500/20 mb-12 shadow-2xl">
           <div className="flex flex-wrap items-center justify-between gap-6 px-8 py-5 bg-[#0a0a0a] rounded-[calc(1rem-1px)]">
             
@@ -89,7 +83,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* --- BOTTOM BAR --- */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-zinc-900 pt-10">
           <p className="text-[10px] font-mono text-zinc-700 uppercase tracking-[0.4em]">
             © 2026 Developed by <Link to="/about" className="hover:text-white transition-colors underline decoration-blue-500/30 underline-offset-8">Adina Hawaldar</Link>
@@ -108,7 +101,6 @@ const Footer = () => {
 
       </div>
 
-      {/* Decorative Blur */}
       <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
     </footer>
   );

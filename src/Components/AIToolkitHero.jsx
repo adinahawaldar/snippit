@@ -5,14 +5,12 @@ const AIToolkitHero = () => {
   return (
     <div className="bg-[#050505] w-full pt-32 pb-16 px-6 relative overflow-hidden">
       
-      {/* --- PURE AMBIENT GLOW (No Grids) --- */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-600/[0.03] blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <header className="flex flex-col md:flex-row md:items-end justify-between gap-10">
           
           <div className="max-w-2xl">
-            {/* Status Badge */}
             <motion.div 
               initial={{ opacity: 0, x: -10 }} 
               animate={{ opacity: 1, x: 0 }}
@@ -26,7 +24,6 @@ const AIToolkitHero = () => {
               
             </motion.div>
             
-            {/* Main Title */}
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -36,7 +33,6 @@ const AIToolkitHero = () => {
               Tool-Kit
             </motion.h1>
 
-            {/* Description */}
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -47,7 +43,6 @@ const AIToolkitHero = () => {
             </motion.p>
           </div>
 
-          {/* Network Stats - Minimalist */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -70,7 +65,6 @@ const AIToolkitHero = () => {
 
         </header>
 
-        {/* Minimalist Divider */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

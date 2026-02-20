@@ -44,12 +44,10 @@ const ValuePropSection = () => {
   return (
     <section className="w-full bg-[#050505] py-20 px-6 relative font-sans">
       
-      {/* Static Background Glow (No animation) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-purple-500/5 blur-[80px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         
-        {/* --- MICRO-HEADER --- */}
         <header className="mb-12 border-b border-zinc-900 pb-8">
           <motion.div 
             initial={{ opacity: 0 }}
@@ -86,7 +84,6 @@ const ValuePropSection = () => {
           </motion.p>
         </header>
 
-        {/* --- COMPACT CARD STACK --- */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -101,14 +98,12 @@ const ValuePropSection = () => {
               whileHover={{ x: 4, borderColor: "rgba(168, 85, 247, 0.2)" }}
               className="group relative flex flex-col md:flex-row items-stretch border border-zinc-900 bg-[#080808] rounded-lg overflow-hidden transition-all duration-300 cursor-default"
             >
-              {/* Ultra-Slim ID Bar */}
               <div className="w-full md:w-10 bg-zinc-900/20 flex items-center justify-center py-2 md:py-0 border-b md:border-b-0 md:border-r border-zinc-900">
                 <span className="font-mono text-[8px] text-zinc-800 -rotate-0 md:-rotate-90 uppercase tracking-widest">
                   {item.id}
                 </span>
               </div>
 
-              {/* Main Content */}
               <div className="flex-1 p-5 flex flex-col md:flex-row md:items-center gap-5">
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
@@ -117,7 +112,6 @@ const ValuePropSection = () => {
                   {item.icon}
                 </motion.div>
 
-                {/* Text Body */}
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-0.5">
                     <h3 className="text-sm font-bold text-zinc-200 uppercase tracking-wide group-hover:text-purple-400 transition-colors">
@@ -132,7 +126,6 @@ const ValuePropSection = () => {
                   </p>
                 </div>
 
-                {/* Micro Trigger Icon (Hidden on Mobile) */}
                 <div className="hidden lg:flex items-center text-zinc-900 group-hover:text-purple-500/20 transition-colors">
                   <MousePointer2 size={12} />
                 </div>

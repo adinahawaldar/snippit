@@ -9,13 +9,11 @@ const ProductExplorer = () => {
   return (
     <section id="Explorer" className="relative min-h-screen bg-[#050505] py-24 px-6 overflow-hidden">
       
-      {/* Background Decor */}
       <div className="absolute inset-0 opacity-[0.15] pointer-events-none" 
            style={{ backgroundImage: `radial-gradient(#333 1px, transparent 1px)`, backgroundSize: '30px 30px' }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         
-        {/* --- PROFESSIONAL HEADER --- */}
         <header className="mb-20 border-b border-zinc-900 pb-12">
           <motion.div 
             initial={{ opacity: 0, y: 10 }} 
@@ -195,7 +193,6 @@ const RegistryCard = ({ title, tag, icon, preview, link, color }) => {
          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.05),transparent)]" />
       </div>
 
-      {/* --- INFO AREA --- */}
       <div className="p-7">
         <div className="flex items-center gap-3 mb-4">
            <span className={`p-2 bg-zinc-900 border border-white/5 rounded-xl transition-all duration-500 group-hover:bg-white/5 ${themes[color].split(' ').pop()}`}>

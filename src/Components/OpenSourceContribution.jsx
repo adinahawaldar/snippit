@@ -12,7 +12,6 @@ const ContributionNexus = () => {
       
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* --- HEADER --- */}
         <div className="flex flex-col items-center justify-center text-center mb-24 w-full">
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
@@ -50,10 +49,8 @@ const ContributionNexus = () => {
           </p>
         </div>
 
-        {/* --- THE PIPELINE GRID --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
-          {/* A. THE SOURCE EDITOR (LEFT) */}
           <div className="lg:col-span-5 relative group min-h-[480px]">
             <div className="absolute -inset-0.5 bg-gradient-to-b from-purple-500/30 to-blue-500/0 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition duration-1000" />
             <div className="relative h-full bg-[#080808] border border-white/10 rounded-[2.5rem] p-8 overflow-hidden flex flex-col shadow-2xl">
@@ -97,7 +94,6 @@ const ContributionNexus = () => {
             </div>
           </div>
 
-          {/* B. THE PIPELINE NODES (RIGHT) */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <PipelineNode icon={<GitFork className="text-blue-400" />} step="01" title="Fork & Clone" desc="Create your copy of Snippit on GitHub and pull it local." color="blue" />

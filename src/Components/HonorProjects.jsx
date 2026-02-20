@@ -32,14 +32,12 @@ const HonorRegistry = () => {
 
   return (
     <section className="py-32 bg-[#020202] relative overflow-hidden">
-      {/* --- GRID BACKGROUND --- */}
       <div className="absolute inset-0 opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] pointer-events-none">
         <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* --- HEADER --- */}
         <header className="mb-20 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -53,7 +51,6 @@ const HonorRegistry = () => {
           </h2>
         </header>
 
-        {/* --- THE NEXT-LEVEL GRID --- */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 perspective-1000">
           {winningIdeas.map((idea, i) => (
             <motion.div
@@ -64,7 +61,6 @@ const HonorRegistry = () => {
               transition={{ delay: i * 0.2 }}
               className="group relative"
             >
-              {/* Floating Rank Badge */}
               <motion.div 
                 className="absolute -top-4 -right-2 z-30 transition-transform duration-500 group-hover:-translate-y-4 group-hover:rotate-6 shadow-2xl"
               >
@@ -75,10 +71,8 @@ const HonorRegistry = () => {
                 </div>
               </motion.div>
 
-              {/* Main Card Body */}
               <div className="relative aspect-[3/4.5] bg-zinc-900/40 border border-white/5 rounded-[2.5rem] p-4 backdrop-blur-3xl overflow-hidden transition-all duration-700 group-hover:border-amber-500/30 group-hover:bg-zinc-900/60">
                 
-                {/* Visual Prism (Asymmetric Image) */}
                 <div className="relative h-[60%] w-full rounded-[2rem] overflow-hidden mb-6 origin-bottom transition-all duration-700 group-hover:scale-[1.05] group-hover:-rotate-2">
                   <img 
                     src={idea.img} 
@@ -88,7 +82,6 @@ const HonorRegistry = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80" />
                 </div>
 
-                {/* Text Content */}
                 <div className="px-4">
                   <div className="flex items-center gap-2 mb-2">
                     <Zap size={10} className="text-amber-500" />
@@ -101,7 +94,6 @@ const HonorRegistry = () => {
                     {idea.desc}
                   </p>
 
-                  {/* Action Link */}
                   <div className="pt-4 border-t border-white/5">
                     <a href={idea.link} className="inline-flex items-center gap-3 text-[10px] font-black text-white uppercase tracking-widest group-hover:gap-5 transition-all">
                       Intel Brief <ArrowUpRight size={14} className="text-amber-500" />
@@ -109,7 +101,6 @@ const HonorRegistry = () => {
                   </div>
                 </div>
 
-                {/* Tech Seal Background Effect */}
                 <ShieldCheck className="absolute -bottom-10 -left-10 text-white/[0.02] -rotate-12 group-hover:rotate-0 transition-transform duration-1000" size={200} />
               </div>
             </motion.div>

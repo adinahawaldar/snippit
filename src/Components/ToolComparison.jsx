@@ -40,7 +40,6 @@ const ToolComparison = () => {
     <section className="py-32 bg-[#020202] px-8 border-t border-white/5">
       <div className="max-w-6xl mx-auto">
         
-        {/* Header */}
         <div className="mb-20">
           <div className="flex items-center gap-2 mb-4">
             <Sparkles size={14} className="text-blue-500" />
@@ -54,11 +53,9 @@ const ToolComparison = () => {
           </p>
         </div>
 
-        {/* Comparison Grid */}
         <div className="grid grid-cols-1 gap-16">
           {comparisonData.map((section, sIdx) => (
             <div key={sIdx} className="relative">
-              {/* Task Header */}
               <div className="flex items-center gap-4 mb-8">
                 <div className="p-3 bg-blue-500/5 border border-blue-500/20 rounded-xl">
                   {section.icon}
@@ -67,7 +64,6 @@ const ToolComparison = () => {
                 <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent" />
               </div>
 
-              {/* Tools Sub-Grid */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {section.tasks.map((item, tIdx) => (
                   <motion.a

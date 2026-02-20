@@ -29,7 +29,6 @@ const WhyAIToolkit = () => {
 
   return (
     <section className="relative py-32 bg-[#020202] overflow-hidden px-8">
-      {/* --- n8n STYLE ANIMATED BACKGROUND PATH --- */}
       <div className="absolute inset-0 pointer-events-none opacity-20 hidden lg:block">
         <svg width="100%" height="100%" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path 
@@ -53,7 +52,6 @@ const WhyAIToolkit = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* Header with n8n Style Badge */}
         <div className="flex flex-col items-center text-center mb-24">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
@@ -69,7 +67,6 @@ const WhyAIToolkit = () => {
           </h2>
         </div>
 
-        {/* Node Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
           {nodes.map((node, idx) => (
             <motion.div
@@ -80,17 +77,13 @@ const WhyAIToolkit = () => {
               transition={{ delay: idx * 0.2 }}
               className={`relative ${node.position}`}
             >
-              {/* The "Node" Card */}
               <div className="group h-full p-8 rounded-[2.5rem] bg-[#080808] border border-white/5 hover:border-blue-500/50 transition-all duration-500 relative overflow-hidden">
                 
-                {/* Internal Glow */}
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/5 blur-[60px] group-hover:bg-blue-500/10 transition-colors" />
 
-                {/* Node Connection Point (Visual Only) */}
                 <div className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#020202] border-2 border-zinc-800 hidden lg:block" />
                 <div className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#020202] border-2 border-zinc-800 hidden lg:block" />
 
-                {/* Content */}
                 <div className={`mb-6 w-14 h-14 rounded-2xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center ${node.color} group-hover:scale-110 transition-transform duration-500`}>
                   {node.icon}
                 </div>
@@ -103,7 +96,6 @@ const WhyAIToolkit = () => {
                   {node.desc}
                 </p>
 
-                {/* Status Indicator */}
                 <div className="flex items-center gap-2">
                    <div className="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[9px] font-mono text-zinc-500 group-hover:text-blue-400 transition-colors">
                      STATUS: OPTIMIZED
@@ -111,7 +103,6 @@ const WhyAIToolkit = () => {
                 </div>
               </div>
 
-              {/* Arrow Connector for Mobile/Tablet */}
               {idx !== 2 && (
                 <div className="flex justify-center py-4 lg:hidden">
                    <ArrowRight size={20} className="rotate-90 text-zinc-800" />
@@ -121,7 +112,6 @@ const WhyAIToolkit = () => {
           ))}
         </div>
 
-        {/* Final CTA Visual */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

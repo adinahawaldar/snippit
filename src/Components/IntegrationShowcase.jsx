@@ -19,12 +19,9 @@ const DualCrossNexus = () => {
   const duplicatedContent = [...content, ...content, ...content];
 
   return (
-    /* -mt-32: Pulls it way up toward the Hero CTA buttons.
-       pt-0: Removes top padding.
-    */
+    
     <section className="relative w-full bg-[#030303] -mt-32 pt-0 pb-24 overflow-hidden flex items-center justify-center min-h-[300px] z-10">
       
-      {/* --- STRIP 1: SLANT DOWN --- */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] -rotate-3">
         <div className="relative flex items-center h-24">
           <motion.div 
@@ -39,7 +36,6 @@ const DualCrossNexus = () => {
         </div>
       </div>
 
-      {/* --- STRIP 2: SLANT UP --- */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] rotate-3">
         <div className="relative flex items-center h-24">
           <motion.div 
@@ -54,7 +50,6 @@ const DualCrossNexus = () => {
         </div>
       </div>
 
-      {/* --- EDGE MASKING --- */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,transparent_10%,#030303_85%)] z-20" />
       <div className="absolute inset-y-0 left-0 w-32 md:w-80 bg-gradient-to-r from-[#030303] via-[#030303]/80 to-transparent z-20" />
       <div className="absolute inset-y-0 right-0 w-32 md:w-80 bg-gradient-to-l from-[#030303] via-[#030303]/80 to-transparent z-20" />
@@ -63,7 +58,6 @@ const DualCrossNexus = () => {
 };
 
 const NexusNode = ({ item }) => (
-  /* Changed border-white/10 to border-zinc-800 to remove the "white part" lines */
   <div className="group relative flex items-center gap-4 px-5 py-2.5 bg-zinc-950/50 border border-zinc-800 rounded-xl backdrop-blur-xl transition-all duration-300 hover:border-zinc-600 cursor-default">
     <div 
       className="p-1.5 rounded-lg bg-white/5 transition-transform duration-300 group-hover:scale-110"

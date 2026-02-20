@@ -18,7 +18,6 @@ const Hero = () => {
 
       className="relative min-h-screen w-full bg-[#030303] flex items-center justify-center overflow-hidden pt-32 pb-12 md:pt-27"
     >
-      {/* --- GRID--- */}
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 opacity-[0.15]"
@@ -59,7 +58,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* --- CONTENT LAYER --- */}
       <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center">
 
         <motion.div

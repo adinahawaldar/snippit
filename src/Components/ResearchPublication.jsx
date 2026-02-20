@@ -41,14 +41,12 @@ const ResearchArchive = () => {
   return (
     <div className="bg-[#050505] min-h-screen text-zinc-400 font-sans selection:bg-blue-500/30 relative">
       
-      {/* --- BACKGROUND BLOOM --- */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-500/5 blur-[120px]" />
       </div>
 
       <main className="max-w-6xl mx-auto px-6 py-20 relative z-10">
         
-        {/* --- HEADER (LICENSE STYLE) --- */}
         <header className="mb-12 border-b border-zinc-900 pb-12">
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-3 mb-6">
             <div className="px-2 py-1 rounded bg-blue-500/10 border border-blue-500/20 text-[9px] font-black uppercase tracking-widest text-blue-500">
@@ -64,7 +62,6 @@ const ResearchArchive = () => {
           </p>
         </header>
 
-        {/* --- CATEGORY TABS --- */}
         <div className="flex flex-wrap gap-2 mb-10">
           {categories.map((cat) => (
             <button
@@ -82,7 +79,6 @@ const ResearchArchive = () => {
           ))}
         </div>
 
-        {/* --- 3-COLUMN GRID --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           <AnimatePresence mode='popLayout'>
             {filteredPapers.slice(0, visibleCount).map((paper, i) => (
@@ -95,7 +91,6 @@ const ResearchArchive = () => {
                 transition={{ duration: 0.4 }}
                 className="group bg-[#0a0a0a] border border-zinc-900 rounded-2xl overflow-hidden hover:border-blue-500/40 transition-all duration-500 flex flex-col shadow-2xl"
               >
-                {/* Image Section (Full Color) */}
                 <div className="h-48 w-full relative overflow-hidden">
                   <img 
                     src={paper.img} 
@@ -110,7 +105,6 @@ const ResearchArchive = () => {
                   </div>
                 </div>
 
-                {/* Content Section */}
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-2 mb-2">
                     <Hash size={10} className="text-blue-500" />
@@ -139,7 +133,6 @@ const ResearchArchive = () => {
           </AnimatePresence>
         </div>
 
-        {/* --- LOAD MORE --- */}
         {visibleCount < filteredPapers.length && (
           <div className="flex justify-center border-t border-zinc-900 pt-12">
             <button 
