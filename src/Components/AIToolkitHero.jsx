@@ -49,18 +49,7 @@ const AIToolkitHero = () => {
             transition={{ delay: 0.3 }}
             className="hidden lg:flex items-center gap-10 border border-zinc-900 bg-black/40 backdrop-blur-md p-8 rounded-2xl"
           >
-            <div>
-              <p className="text-[10px] font-mono uppercase text-zinc-700 mb-2 tracking-widest">Network</p>
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
-                <p className="text-2xl font-bold text-white tracking-tight">Global</p>
-              </div>
-            </div>
-            <div className="w-[1px] h-10 bg-zinc-900" />
-            <div>
-              <p className="text-[10px] font-mono uppercase text-zinc-700 mb-2 tracking-widest">Node</p>
-              <p className="text-2xl font-bold text-zinc-400 tracking-tight">Alpha-01</p>
-            </div>
+            
           </motion.div>
 
         </header>

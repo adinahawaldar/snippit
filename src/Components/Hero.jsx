@@ -67,7 +67,7 @@ const Hero = () => {
         >
           <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
           <span className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] font-bold text-zinc-500">
-            System Protocol v1.0.4
+            System Protocol v2.0
           </span>
         </motion.div>
 

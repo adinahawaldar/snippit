@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Scale, FileText, ShieldCheck, Lock, ArrowLeft, Check } from 'lucide-react';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer'
 
 const Terms = () => {
   const [activeSection, setActiveSection] = useState('01');
@@ -13,6 +15,8 @@ const Terms = () => {
   ];
 
   return (
+    <>
+    <Navbar/>
     <div className="bg-[#050505] min-h-screen text-zinc-400 font-sans py-24 px-10 selection:bg-blue-500/30">
       
       <div className="max-w-6xl mx-auto flex justify-between items-center mb-24">
@@ -93,6 +97,9 @@ const Terms = () => {
         </div>
       </div>
     </div>
+
+    <Footer/>
+    </>
   );
 };
 

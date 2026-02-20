@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, ArrowUpRight, Globe, Zap, Shield, X, Rocket } from 'lucide-react';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const SaaSLaunchpad = () => {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
@@ -14,41 +16,45 @@ const SaaSLaunchpad = () => {
       color: "bg-blue-600",
       content: "Full Velocity Template Logic..." 
     },
-    {
-      id: "neural",
-      name: "Neural AI",
-      desc: "Modern dark-mesh theme optimized for AI/ML product launches.",
-      img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=600&auto=format&fit=crop",
-      color: "bg-purple-600",
-      content: "Full Neural AI Template Logic..."
-    },
-    {
-      id: "fintech",
-      name: "Nexus Fintech",
-      desc: "Clean, trustworthy financial interface with high-density data blocks.",
-      img: "https://images.unsplash.com/photo-1551288049-bbbda546697a?q=80&w=600&auto=format&fit=crop",
-      color: "bg-emerald-500",
-      content: "Full Fintech Template Logic..."
-    },
-    {
-      id: "agency",
-      name: "Studio Lab",
-      desc: "Minimalist portfolio structure for creative agencies and studios.",
-      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
-      color: "bg-white",
-      content: "Full Agency Template Logic..."
-    },
-    {
-      id: "devtool",
-      name: "Terminal Pro",
-      desc: "Developer-first landing page with code-centric content blocks.",
-      img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=600&auto=format&fit=crop",
-      color: "bg-zinc-700",
-      content: "Full DevTool Template Logic..."
-    }
+    // {
+    //   id: "neural",
+    //   name: "Neural AI",
+    //   desc: "Modern dark-mesh theme optimized for AI/ML product launches.",
+    //   img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=600&auto=format&fit=crop",
+    //   color: "bg-purple-600",
+    //   content: "Full Neural AI Template Logic..."
+    // },
+    // {
+    //   id: "fintech",
+    //   name: "Nexus Fintech",
+    //   desc: "Clean, trustworthy financial interface with high-density data blocks.",
+    //   img: "https://images.unsplash.com/photo-1551288049-bbbda546697a?q=80&w=600&auto=format&fit=crop",
+    //   color: "bg-emerald-500",
+    //   content: "Full Fintech Template Logic..."
+    // },
+    // {
+    //   id: "agency",
+    //   name: "Studio Lab",
+    //   desc: "Minimalist portfolio structure for creative agencies and studios.",
+    //   img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
+    //   color: "bg-white",
+    //   content: "Full Agency Template Logic..."
+    // },
+    // {
+    //   id: "devtool",
+    //   name: "Terminal Pro",
+    //   desc: "Developer-first landing page with code-centric content blocks.",
+    //   img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=600&auto=format&fit=crop",
+    //   color: "bg-zinc-700",
+    //   content: "Full DevTool Template Logic..."
+    // }
   ];
 
   return (
+    <>
+    <Navbar/>
+    
+    
     <div className="bg-[#050505] min-h-screen py-24 px-6 text-zinc-400 font-sans selection:bg-blue-500/30">
       
       <header className="max-w-7xl mx-auto mb-20">
@@ -142,6 +148,9 @@ const SaaSLaunchpad = () => {
         )}
       </AnimatePresence>
     </div>
+    <Footer/>
+
+    </>
   );
 };
 

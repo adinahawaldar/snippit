@@ -88,7 +88,7 @@ const ContributionNexus = () => {
                        <div key={i} className="w-6 h-6 rounded-full border-2 border-[#080808] bg-zinc-700" />
                      ))}
                    </div>
-                   <span className="text-[10px] text-zinc-500 font-mono italic">+142 recent PRs merged</span>
+                   <span className="text-[10px] text-zinc-500 font-mono italic">+20 recent PRs merged</span>
                 </div>
               </div>
             </div>

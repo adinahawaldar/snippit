@@ -290,20 +290,35 @@ const VisualRegistry = () => {
                                 className="group relative bg-white/[0.02] border border-white/[0.05] rounded-[2rem] p-2 hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-500"
                             >
                                 {/* PREVIEW IMAGE AREA */}
-                                <div className="h-32 relative bg-black rounded-[1.6rem] overflow-hidden mb-4 shadow-inner">
-                                    <div className={`absolute inset-0 ${item.tw}`} />
+<div className="h-32 relative bg-black rounded-[1.6rem] overflow-hidden mb-4 shadow-inner">
+    {/* Condition: If we are on the Textures tab, we make the background white 
+        and invert the texture so the white patterns become dark/black.
+    */}
+    <div className={`absolute inset-0 transition-colors duration-500 ${
+        activeTab === 'Textures' ? 'bg-white' : 'bg-black'
+    }`}>
+        <div className={`absolute inset-0 ${item.tw} ${
+            activeTab === 'Textures' ? 'invert opacity-80' : ''
+        }`} />
+    </div>
 
-                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 group-hover:to-transparent transition-all duration-500" />
+    {/* Dynamic Gradient Overlay - Hidden on Textures for maximum clarity */}
+    {activeTab === 'Gradients' && (
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 group-hover:to-transparent transition-all duration-500" />
+    )}
 
-                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <button
-                                            onClick={() => handleCopy(item.tw, i)}
-                                            className="bg-white text-black p-3 rounded-2xl shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 active:scale-90"
-                                        >
-                                            {copiedIndex === i ? <Check size={18} /> : <Copy size={18} />}
-                                        </button>
-                                    </div>
-                                </div>
+    {/* Hover Action Overlay */}
+    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <button
+            onClick={() => handleCopy(item.tw, i)}
+            className={`${
+                activeTab === 'Textures' ? 'bg-black text-white' : 'bg-white text-black'
+            } p-3 rounded-2xl shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 active:scale-90`}
+        >
+            {copiedIndex === i ? <Check size={18} /> : <Copy size={18} />}
+        </button>
+    </div>
+</div>
 
                                 <div className="px-3 pb-3">
                                     <div className="flex justify-between items-center mb-4">
