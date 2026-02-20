@@ -97,7 +97,6 @@ const ResourceHub = () => {
           </motion.p>
         </header>
 
-        {/* --- CATEGORY GRID --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((cat, i) => (
             <motion.div
@@ -140,7 +139,6 @@ const ResourceHub = () => {
             </motion.div>
           ))}
 
-          {/* Special "Coming Soon" or Feature Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

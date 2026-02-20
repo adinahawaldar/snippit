@@ -9,7 +9,6 @@ const VisualRegistry = () => {
     const [showMore, setShowMore] = useState(false);
     const [copiedIndex, setCopiedIndex] = useState(null);
 
-    // ... (Gradients and Textures arrays remain the same as your provided code)
     const gradients = [
 
         { name: "Aurora", tw: "bg-gradient-to-tr from-slate-900 via-purple-900/40 to-slate-900" },
@@ -268,7 +267,6 @@ const VisualRegistry = () => {
             </header>
 
             <main className="max-w-7xl mx-auto">
-                {/* REFINED NAVIGATION */}
                 <div className="flex justify-center md:justify-start gap-12 mb-12 border-b border-white/[0.03] pb-6">
                     {['Gradients', 'Textures'].map(t => (
                         <button
@@ -284,7 +282,6 @@ const VisualRegistry = () => {
                     ))}
                 </div>
 
-                {/* REFINED GRID */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                     <AnimatePresence mode="popLayout">
                         {visibleData.map((item, i) => (
@@ -296,10 +293,8 @@ const VisualRegistry = () => {
                                 <div className="h-32 relative bg-black rounded-[1.6rem] overflow-hidden mb-4 shadow-inner">
                                     <div className={`absolute inset-0 ${item.tw}`} />
 
-                                    {/* OVERLAY TINT FOR COHESION */}
                                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 group-hover:to-transparent transition-all duration-500" />
 
-                                    {/* FLOATING COPY BUTTON */}
                                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <button
                                             onClick={() => handleCopy(item.tw, i)}
@@ -310,14 +305,12 @@ const VisualRegistry = () => {
                                     </div>
                                 </div>
 
-                                {/* CONTENT AREA */}
                                 <div className="px-3 pb-3">
                                     <div className="flex justify-between items-center mb-4">
                                         <h4 className="text-[11px] font-bold text-zinc-100 uppercase tracking-wider">{item.name}</h4>
                                         <span className="text-[8px] font-black text-blue-500/60 uppercase tracking-widest px-2 py-0.5 rounded-full bg-blue-500/5 border border-blue-500/10">Tailwind</span>
                                     </div>
 
-                                    {/* READABLE CODE BLOCK */}
                                     <div className="relative overflow-hidden">
                                         <div className="bg-[#000000]/40 rounded-xl p-3 border border-white/[0.03] font-mono text-[9px] text-zinc-500 group-hover:text-blue-400/80 transition-colors">
                                             <div className="flex gap-2 items-center mb-1 text-[8px] text-zinc-700 font-bold uppercase tracking-tighter">
@@ -335,7 +328,6 @@ const VisualRegistry = () => {
                     </AnimatePresence>
                 </div>
 
-                {/* SHOW MORE BUTTON */}
                 {!showMore && (
                     <div className="mt-20 flex justify-center">
                         <button

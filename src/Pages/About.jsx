@@ -28,7 +28,6 @@ const AboutRegistry = () => {
       <Navbar />
       <div className="bg-[#050505] min-h-screen text-white font-sans selection:bg-blue-500/30 relative">
         
-        {/* --- TECHNICAL BACKGROUND --- */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/[0.03] blur-[120px] rounded-full" />
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-600/[0.02] blur-[100px]" />
@@ -36,7 +35,6 @@ const AboutRegistry = () => {
 
         <main className="max-w-5xl mx-auto px-6 pt-16 pb-24 relative z-10">
           
-          {/* --- BACK NAVIGATION --- */}
           <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}>
             <Link to="/" className="group inline-flex items-center gap-4 mb-16">
               <div className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center group-hover:border-blue-500/50 transition-all">
@@ -48,7 +46,6 @@ const AboutRegistry = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            {/* --- LEFT COLUMN: THE ARCHITECT --- */}
             <div className="lg:col-span-5 space-y-12">
               <section>
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3 mb-6">
@@ -78,7 +75,6 @@ const AboutRegistry = () => {
                 </div>
               </section>
 
-              {/* Technical Spec Table */}
               <section className="p-6 rounded-2xl border border-zinc-900 bg-black/40 backdrop-blur-sm">
                 <h4 className="text-[10px] font-black uppercase tracking-widest text-zinc-600 mb-6 flex items-center gap-2">
                   <Command size={12} /> System_Specs
@@ -94,10 +90,8 @@ const AboutRegistry = () => {
               </section>
             </div>
 
-            {/* --- RIGHT COLUMN: THE PLATFORM --- */}
             <div className="lg:col-span-7 space-y-6">
               
-              {/* Vision Card */}
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="p-10 rounded-[2rem] bg-gradient-to-br from-zinc-900/50 to-black border border-zinc-800/50 relative overflow-hidden group"
@@ -115,7 +109,6 @@ const AboutRegistry = () => {
                 </div>
               </motion.div>
 
-              {/* Contact/Action Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <a href="mailto:adinahawaldar@gmail.com" className="p-8 rounded-2xl bg-white flex flex-col justify-between group hover:bg-zinc-200 transition-colors h-48">
                   <div className="flex justify-between items-start">
@@ -143,7 +136,6 @@ const AboutRegistry = () => {
             </div>
           </div>
 
-          {/* --- FOOTER REGISTRY --- */}
           <footer className="mt-24 pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6 opacity-40 hover:opacity-100 transition-opacity">
             <div className="flex items-center gap-3">
               <Globe size={14} className="text-zinc-500" />

@@ -13,7 +13,7 @@ const AIToolkit = () => {
       <AIToolkitHero/>
       <AIToolkitDiscovery/>
       <WhyAIToolkit/>
-      <ToolComparison/>
+      {/* <ToolComparison/> */}
       <Footer/>
     </>
   )

@@ -2,17 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   GitFork, GitPullRequest, Terminal, Github, 
-  Cpu, Code2, Globe, ArrowRight, Zap, Database, Slack
+  Code2, Globe, ArrowRight, Zap, Database, Slack,
+  GitCommit, Layers, Share2, CheckCircle2
 } from 'lucide-react';
-
-const integrations = [
-  { icon: <Slack size={16} />, color: "#4A154B" },
-  { icon: <Zap size={16} />, color: "#F7DF1E" },
-  { icon: <Database size={16} />, color: "#336791" },
-  { icon: <Github size={16} />, color: "#ffffff" },
-  { icon: <Code2 size={16} />, color: "#A855F7" },
-  { icon: <Globe size={16} />, color: "#5865F2" },
-];
 
 const ContributionNexus = () => {
   return (
@@ -21,13 +13,10 @@ const ContributionNexus = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* --- HEADER --- */}
-        {/* Added w-full and justify-center to ensure the flex children align to the true center */}
         <div className="flex flex-col items-center justify-center text-center mb-24 w-full">
-          
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            /* Added mx-auto and justify-center here for the pill itself */
             className="flex items-center justify-center gap-3 mb-6 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mx-auto"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
@@ -38,21 +27,19 @@ const ContributionNexus = () => {
             Scale the <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Registry.</span>
           </h2>
 
-          {/* --- SUBMISSION CALL TO ACTION --- */}
-          <div className="relative overflow-hidden w-full max-w-lg mb-8 group mx-auto">
+          <div className="relative overflow-hidden w-full max-w-lg mb-8 group mx-auto text-center">
             <div className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent top-0" />
-            <div className="py-3 flex flex-col items-center">
+            <div className="py-3">
               <p className="text-zinc-500 text-xs md:text-sm uppercase tracking-widest font-medium">
                 Have a useful snippet or repo? 
                 <a
-  href="https://github.com/adinahawaldar/snippit" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="text-white ml-2 cursor-pointer hover:text-purple-400 transition-colors underline underline-offset-4 hover:decoration-purple-500/50"
->
-  Submit it to Snippit.
-</a>
-
+                  href="https://github.com/adinahawaldar/snippit" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white ml-2 cursor-pointer hover:text-purple-400 transition-colors underline underline-offset-4 hover:decoration-purple-500/50"
+                >
+                  Submit it to Snippit.
+                </a>
               </p>
             </div>
             <div className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent bottom-0" />
@@ -78,17 +65,17 @@ const ContributionNexus = () => {
                   <div className="w-2.5 h-2.5 rounded-full bg-zinc-800 border border-white/5" />
                 </div>
                 <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-500 bg-white/5 px-3 py-1 rounded-full border border-white/5">
-                  <Terminal size={12} className="text-purple-400" /> contribution.ts
+                  <Terminal size={12} className="text-purple-400" /> git-workflow.sh
                 </div>
               </div>
               
               <div className="space-y-4 font-mono text-[12px] md:text-[13px] leading-relaxed">
-                <CodeLine line="01" text={<><span className="text-purple-500">import</span> {'{ Registry }'} <span className="text-purple-500">from</span> <span className="text-blue-400">"@nexus/core"</span></>} />
-                <CodeLine line="02" text={<><span className="text-purple-500">export const</span> <span className="text-blue-400">Contributor</span> = () ={'>'} {'{'}</>} />
-                <CodeLine line="03" indent text={<>id: <span className="text-amber-500">'REG_882'</span>,</>} />
-                <CodeLine line="04" indent text={<>status: <span className="text-green-500">'ACTIVE'</span>,</>} />
-                <CodeLine line="05" indent text={<>assets: [<span className="text-amber-500">'UI_KIT', 'AI_BOT'</span>],</>} />
-                <CodeLine line="06" text={<>{'}'}</>} />
+                <CodeLine line="01" text={<><span className="text-zinc-600"># Start the contribution</span></>} />
+                <CodeLine line="02" text={<><span className="text-purple-500">git</span> clone <span className="text-blue-400">your-fork-url.git</span></>} />
+                <CodeLine line="03" text={<><span className="text-purple-500">git</span> checkout -b <span className="text-amber-500">feat/new-snippet</span></>} />
+                <CodeLine line="04" text={<><span className="text-purple-500">git</span> commit -m <span className="text-green-500">"Add: UI Component"</span></>} />
+                <CodeLine line="05" text={<><span className="text-purple-500">git</span> push origin <span className="text-amber-500">feat/new-snippet</span></>} />
+                <CodeLine line="06" text={<><span className="text-zinc-600"># Ready for PR Review</span></>} />
               </div>
 
               <motion.div 
@@ -104,7 +91,7 @@ const ContributionNexus = () => {
                        <div key={i} className="w-6 h-6 rounded-full border-2 border-[#080808] bg-zinc-700" />
                      ))}
                    </div>
-                   <span className="text-[10px] text-zinc-500 font-mono italic">+142 recent submissions</span>
+                   <span className="text-[10px] text-zinc-500 font-mono italic">+142 recent PRs merged</span>
                 </div>
               </div>
             </div>
@@ -113,13 +100,15 @@ const ContributionNexus = () => {
           {/* B. THE PIPELINE NODES (RIGHT) */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <PipelineNode icon={<GitFork className="text-blue-400" />} step="01" title="Branch Fork" desc="Generate your secure environment." color="blue" />
-              <PipelineNode icon={<Code2 className="text-purple-400" />} step="02" title="Asset Injection" desc="Standardize UI components using our CLI." color="purple" />
-              <PipelineNode icon={<GitPullRequest className="text-green-400" />} step="03" title="Audit Stream" desc="AI-driven performance verification." color="green" />
-              <PipelineNode icon={<Globe className="text-pink-400" />} step="04" title="Global Sync" desc="Deployment to the hub for 50k+ devs." color="pink" />
+              <PipelineNode icon={<GitFork className="text-blue-400" />} step="01" title="Fork & Clone" desc="Create your copy of Snippit on GitHub and pull it local." color="blue" />
+              <PipelineNode icon={<Layers className="text-purple-400" />} step="02" title="Feature Branch" desc="Create feat/ui-card branch from main to begin." color="purple" />
+              <PipelineNode icon={<GitCommit className="text-green-400" />} step="03" title="Commit & Push" desc="Add code with clear messages and push to head." color="green" />
+              <PipelineNode icon={<GitPullRequest className="text-pink-400" />} step="04" title="PR & Merge" desc="Open PR to original repo. Review, approve, and sync." color="pink" />
             </div>
             
-            <motion.button 
+            <motion.a 
+              href="https://github.com/adinahawaldar/snippit"
+              target="_blank"
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
               className="flex items-center justify-between p-7 bg-white rounded-[2.5rem] group transition-all duration-500"
@@ -129,22 +118,14 @@ const ContributionNexus = () => {
                   <Github size={24} />
                 </div>
                 <div className="text-left">
-                  <p className="text-[9px] font-black text-zinc-400 uppercase tracking-widest">Connect GitHub</p>
-                  <a
-  href="https://github.com/adinahawaldar/snippit"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-black font-bold text-lg md:text-xl tracking-tight leading-none hover:underline"
->
-  Initialize Contribution Flow
-</a>
-
+                  <p className="text-[9px] font-black text-zinc-400 uppercase tracking-widest leading-none mb-1">Public Repository</p>
+                  <p className="text-black font-bold text-lg md:text-xl tracking-tight leading-none">Initialize Contribution Flow</p>
                 </div>
               </div>
               <div className="w-12 h-12 flex items-center justify-center bg-black/5 rounded-full group-hover:bg-black group-hover:text-white transition-all">
                 <ArrowRight size={24} />
               </div>
-            </motion.button>
+            </motion.a>
           </div>
 
         </div>
@@ -153,10 +134,10 @@ const ContributionNexus = () => {
   );
 };
 
-const CodeLine = ({ line, text, indent = false }) => (
+const CodeLine = ({ line, text }) => (
   <div className="flex gap-4 group/line">
     <span className="text-zinc-800 text-[10px] group-hover/line:text-zinc-600 transition-colors w-4">{line}</span>
-    <p className={`text-zinc-400 transition-colors ${indent ? 'pl-6' : ''}`}>{text}</p>
+    <p className="text-zinc-400 transition-colors">{text}</p>
   </div>
 );
 
@@ -174,9 +155,9 @@ const PipelineNode = ({ icon, step, title, desc, color }) => {
         <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-white/10">
           {icon}
         </div>
-        <span className="font-mono text-[9px] text-zinc-700 font-bold group-hover:text-zinc-400">NOD_{step}</span>
+        <span className="font-mono text-[9px] text-zinc-700 font-bold group-hover:text-zinc-400 uppercase italic">Step_{step}</span>
       </div>
-      <h4 className="text-lg font-bold text-white mb-2 tracking-tight uppercase">{title}</h4>
+      <h4 className="text-lg font-bold text-white mb-2 tracking-tight uppercase italic">{title}</h4>
       <p className="text-[11px] leading-relaxed text-zinc-500 group-hover:text-zinc-300 transition-colors">{desc}</p>
       <svg className="absolute bottom-6 right-6 w-16 h-16 opacity-0 group-hover:opacity-10 transition-opacity duration-700" viewBox="0 0 100 100">
         <path d="M0 100 L50 100 L50 50 L100 50" fill="none" stroke="currentColor" strokeWidth="1" className="text-white" />

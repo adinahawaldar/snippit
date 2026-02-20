@@ -64,7 +64,6 @@ const ResourceHub = () => {
       <Navbar />
       <div className="bg-[#050505] min-h-screen text-zinc-400 font-sans selection:bg-blue-500/30 relative py-20 px-6">
         
-        {/* --- PROFESSIONAL AMBIENT BACKGROUND --- */}
         <div className="fixed inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-blue-500/5 to-transparent blur-[120px]" />
         </div>
@@ -92,7 +91,6 @@ const ResourceHub = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
               >
-                {/* USE LINK INSTEAD OF <a> FOR INTERNAL ROUTES */}
                 <Link
                   to={cat.path}
                   className="group relative block h-full bg-[#0a0a0a] border border-zinc-800/50 rounded-2xl p-8 hover:bg-[#0f0f0f] hover:border-zinc-700 transition-all duration-300"

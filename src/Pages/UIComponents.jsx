@@ -88,21 +88,18 @@ const UIComponents = () => {
     ],
 
     Buttons: [
-  // 1-5: MODERN CORE
   { name: "Primary CTA", tw: "inline-flex items-center justify-center px-10 py-4 bg-blue-500 hover:bg-blue-400 text-white rounded-full font-black uppercase tracking-widest shadow-lg shadow-blue-500/20 transition-all active:scale-95" },
   { name: "Ghost Outline", tw: "inline-flex items-center justify-center px-10 py-4 bg-transparent border-2 border-zinc-600 hover:border-white text-zinc-300 hover:text-white rounded-full font-bold transition-all" },
   { name: "Modern Dark", tw: "inline-flex items-center justify-center px-10 py-4 bg-white text-black rounded-2xl font-black uppercase tracking-tighter hover:bg-zinc-200 active:scale-95 transition-all" },
   { name: "Glass Button", tw: "inline-flex items-center justify-center px-8 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl hover:bg-white/20 text-white transition-all shadow-xl" },
   { name: "Minimal Soft", tw: "inline-flex items-center justify-center px-6 py-2.5 bg-blue-500/10 text-blue-400 rounded-lg border border-blue-500/20 hover:bg-blue-500/20 transition-all" },
 
-  // 6-10: NEXT-LEVEL 3D & SHADOWS
   { name: "Retro 3D Press", tw: "inline-flex items-center justify-center px-10 py-4 bg-blue-600 text-white rounded-2xl border-b-[6px] border-blue-800 active:border-b-0 active:translate-y-[6px] transition-all font-bold shadow-xl" },
   { name: "Elevated Floating", tw: "inline-flex items-center justify-center px-10 py-4 bg-zinc-800 text-white rounded-full shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:-translate-y-1 hover:shadow-[0_30px_50px_rgba(0,0,0,0.5)] transition-all" },
   { name: "Neumorphic Soft", tw: "inline-flex items-center justify-center px-10 py-4 bg-zinc-800 rounded-2xl shadow-[8px_8px_16px_#040404,-8px_-8px_16px_#121212] active:shadow-inner text-zinc-400" },
   { name: "Brutalist Box", tw: "inline-flex items-center justify-center px-8 py-4 bg-yellow-400 text-black border-4 border-black font-black uppercase shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all" },
   { name: "Magnetic Glow", tw: "relative inline-flex items-center justify-center px-10 py-4 bg-zinc-950 text-white rounded-full border border-zinc-800 overflow-hidden before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_var(--x,50%)_var(--y,50%),rgba(59,130,246,0.3),transparent_50%)]" },
 
-  // 11-20: GRADIENTS & EFFECTS
   { name: "Gradient Border", tw: "p-[2px] rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 inline-flex group" },
   { name: "Neon Pulse", tw: "inline-flex items-center justify-center px-10 py-4 bg-zinc-900 border border-emerald-500/50 text-emerald-400 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.2)] hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] animate-pulse" },
   { name: "Bento Action", tw: "w-full aspect-video flex items-center justify-center bg-zinc-800 rounded-3xl border border-white/5 hover:bg-zinc-700 transition-colors group p-6" },
@@ -114,7 +111,6 @@ const UIComponents = () => {
   { name: "Double Layer", tw: "relative inline-flex items-center justify-center px-10 py-4 bg-zinc-100 text-black rounded-xl translate-x-[-4px] translate-y-[-4px] before:absolute before:inset-0 before:bg-blue-500 before:rounded-xl before:-z-10 before:translate-x-[8px] before:translate-y-[8px]" },
   { name: "Stripe Flow", tw: "inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white rounded-2xl overflow-hidden relative after:absolute after:inset-0 after:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] after:bg-[length:20px_20px] hover:after:animate-[spin_2s_linear_infinite]" },
 
-  // 21-30: FUNCTIONAL & SYSTEM
   { name: "Loading Spin", tw: "inline-flex items-center justify-center gap-3 px-10 py-4 bg-zinc-800 text-zinc-500 rounded-full cursor-not-allowed border border-zinc-700" },
   { name: "Delete Danger", tw: "inline-flex items-center justify-center px-8 py-3 bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white border border-red-500/20 rounded-xl transition-all" },
   { name: "Tab Switcher", tw: "inline-flex items-center gap-2 p-1 bg-zinc-900 border border-zinc-800 rounded-xl" },
@@ -129,14 +125,12 @@ const UIComponents = () => {
 
 
 Inputs: [
-  // 1-5: MODERN CORE
   { name: "Classic Field", tw: "w-full bg-zinc-800 border-2 border-zinc-700 px-6 py-4 rounded-2xl focus:border-blue-500 focus:outline-none transition-all text-white placeholder:text-zinc-600" },
   { name: "Search Input", tw: "w-full pl-14 pr-6 py-4 bg-zinc-800 rounded-full border border-zinc-700 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all shadow-lg" },
   { name: "Password Box", tw: "w-full flex items-center bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus-within:border-blue-500 transition-all shadow-inner" },
   { name: "Floating Label", tw: "relative w-full h-16 bg-zinc-800 border-b-2 border-zinc-700 focus-within:border-blue-500 transition-all group px-4 flex items-end pb-2" },
   { name: "Minimal Line", tw: "w-full bg-transparent border-b border-zinc-700 px-0 py-2 focus:border-blue-500 focus:outline-none transition-all text-lg" },
 
-  // 6-15: INTERACTIVE & SELECTION
   { name: "OTP Numeric", tw: "w-14 h-16 bg-zinc-900 border-2 border-zinc-800 rounded-xl text-center text-2xl font-black text-blue-500 focus:border-blue-500 focus:bg-zinc-800 outline-none transition-all" },
   { name: "Toggle Switch", tw: "w-14 h-7 bg-zinc-700 rounded-full relative border-2 border-zinc-600 cursor-pointer flex items-center px-1 shadow-inner hover:bg-zinc-600 transition-colors" },
   { name: "Tag Input Box", tw: "w-full flex flex-wrap gap-3 p-4 bg-zinc-800 border border-zinc-700 rounded-[2rem] focus-within:border-zinc-500 transition-all shadow-xl" },
@@ -148,7 +142,6 @@ Inputs: [
   { name: "Date Picker", tw: "w-full bg-zinc-800 text-zinc-200 border border-zinc-700 p-4 rounded-2xl font-bold uppercase tracking-widest text-xs cursor-pointer hover:bg-zinc-750 transition-colors" },
   { name: "Color Swatch", tw: "w-12 h-12 rounded-full border-4 border-zinc-800 shadow-2xl cursor-pointer overflow-hidden p-0" },
 
-  // 16-25: ADVANCED & UTILITY
   { name: "Upload Dropzone", tw: "w-full aspect-[2/1] bg-zinc-900 border-2 border-dashed border-zinc-700 rounded-[2.5rem] flex flex-col items-center justify-center gap-4 hover:border-blue-500 hover:bg-blue-500/5 transition-all group" },
   { name: "Textarea Auto", tw: "w-full bg-zinc-800 border border-zinc-700 p-6 rounded-3xl focus:ring-4 focus:ring-blue-500/10 min-h-[150px] outline-none" },
   { name: "Input Group Addon", tw: "flex w-full rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-lg" },
@@ -160,7 +153,6 @@ Inputs: [
   { name: "Search Cmd-K", tw: "w-full flex items-center justify-between bg-zinc-900 border border-zinc-800 px-4 py-3 rounded-xl text-zinc-500 text-sm hover:border-zinc-600 cursor-pointer shadow-md" },
   { name: "Rating Stars", tw: "flex items-center gap-2 text-zinc-600 hover:text-yellow-400 cursor-pointer transition-colors" },
 
-  // 26-30: HIGH-DENSITY FORM DATA
   { name: "Country Selector", tw: "w-full flex items-center gap-4 bg-zinc-800 border border-zinc-700 px-6 py-4 rounded-2xl hover:bg-zinc-750 transition-all" },
   { name: "Credit Card Field", tw: "w-full bg-zinc-800 border-2 border-zinc-700 px-6 py-4 rounded-2xl font-mono tracking-widest text-lg placeholder:text-zinc-600" },
   { name: "Currency Input", tw: "relative w-full before:content-['$'] before:absolute before:left-6 before:top-1/2 before:-translate-y-1/2 before:text-zinc-500 before:font-bold" },
@@ -203,7 +195,6 @@ Inputs: [
       </header>
 
       <main className="max-w-7xl mx-auto">
-        {/* TABS */}
         <div className="flex gap-10 mb-12 border-b border-white/[0.03] pb-6 overflow-x-auto no-scrollbar">
           {tabs.map((tab) => (
             <button key={tab.id} onClick={() => {setActiveTab(tab.id); setVisibleCount(10);}} className={`flex items-center gap-2 text-[11px] uppercase font-black tracking-[0.2em] transition-all ${activeTab === tab.id ? 'text-white' : 'text-zinc-600'}`}>
@@ -212,13 +203,11 @@ Inputs: [
           ))}
         </div>
 
-        {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           <AnimatePresence mode="popLayout">
             {currentList.slice(0, visibleCount).map((item, i) => (
               <motion.div key={item.name} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="group relative bg-zinc-900 border border-zinc-800 rounded-[2rem] p-4 hover:border-blue-500/50 transition-all flex flex-col shadow-xl">
                 
-                {/* PREVIEW BOX - Same as they look */}
                 <div className="h-32 relative bg-black/60 rounded-2xl overflow-hidden mb-5 flex items-center justify-center border border-white/5">
                   <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#555_1px,transparent_1px)] bg-[size:10px_10px]" />
                   <div className={`w-[85%] h-10 rounded-lg shadow-2xl transition-all duration-500 group-hover:scale-105 ${cleanPreview(item.tw)} flex items-center justify-center text-[7px] text-white/20 uppercase font-black`}>
@@ -242,7 +231,6 @@ Inputs: [
           </AnimatePresence>
         </div>
 
-        {/* LOAD MORE BUTTON */}
         {visibleCount < currentList.length && (
           <div className="mt-16 flex justify-center">
             <button 

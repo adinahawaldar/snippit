@@ -12,7 +12,6 @@ const LicensePage = () => {
       <Navbar />
       <div className="bg-[#050505] min-h-screen text-zinc-400 font-sans selection:bg-blue-500/30 relative py-20 px-6">
         
-        {/* --- BACKGROUND BLOOM --- */}
         <div className="fixed inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-500/5 blur-[120px]" />
         </div>
@@ -39,7 +38,6 @@ const LicensePage = () => {
             </p>
           </header>
 
-          {/* --- QUICK PERMISSIONS SUMMARY --- */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             <div className="p-6 rounded-2xl bg-[#0a0a0a] border border-zinc-800/50">
               <Scale className="text-blue-500 mb-4" size={20} />
@@ -68,7 +66,6 @@ const LicensePage = () => {
             </div>
           </div>
 
-          {/* --- OFFICIAL LICENSE TEXT --- */}
           <section className="bg-zinc-900/30 border border-zinc-800/50 rounded-3xl p-8 md:p-12">
             <div className="flex items-center gap-3 mb-8 text-white">
               <FileText size={18} />
@@ -104,7 +101,6 @@ const LicensePage = () => {
             </div>
           </section>
 
-          {/* --- FOOTER REGISTRY --- */}
           <footer className="mt-20 pt-8 border-t border-zinc-900 flex justify-between items-center opacity-30">
             <div className="flex items-center gap-3">
               <Fingerprint size={16} />

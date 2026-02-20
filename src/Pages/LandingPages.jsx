@@ -115,14 +115,12 @@ const UIVault = () => {
     <Navbar/>
     <div className="bg-[#050505] min-h-screen text-zinc-400 font-sans selection:bg-blue-500/30 relative">
       
-      {/* --- BACKGROUND BLOOM --- */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-indigo-500/5 blur-[120px]" />
       </div>
 
       <main className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         
-        {/* --- HEADER (License Style) --- */}
         <header className="mb-16 border-b border-zinc-900 pb-12">
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-3 mb-6">
             <div className="px-2 py-1 rounded bg-indigo-500/10 border border-indigo-500/20 text-[9px] font-black uppercase tracking-widest text-indigo-500">
@@ -138,7 +136,6 @@ const UIVault = () => {
           </p>
         </header>
 
-        {/* --- CATEGORY SELECTOR --- */}
         <div className="flex flex-wrap items-center gap-3 mb-12">
           <span className="text-[10px] font-mono text-zinc-700 uppercase tracking-widest mr-4">Filter_By:</span>
           {categories.map((cat) => (
@@ -156,7 +153,6 @@ const UIVault = () => {
           ))}
         </div>
 
-        {/* --- GRID LAYOUT --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           <AnimatePresence mode='popLayout'>
             {filteredDesigns.slice(0, visibleCount).map((item, i) => (
@@ -168,14 +164,12 @@ const UIVault = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 className="group relative flex flex-col bg-zinc-900/20 rounded-[2rem] border border-zinc-900 overflow-hidden hover:border-indigo-500/50 transition-all duration-500"
               >
-                {/* Image Section with Overlay */}
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img 
                     src={item.img} 
                     alt={item.name} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
                   />
-                  {/* Glass Action Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm flex flex-col items-center justify-center gap-4">
                     <a href={item.figma} className="flex items-center gap-3 px-6 py-3 rounded-xl bg-[#F24E1E] text-white text-[10px] font-black uppercase tracking-widest hover:scale-105 transition-transform">
                       <Figma size={14} /> Open Figma
@@ -206,7 +200,6 @@ const UIVault = () => {
           </AnimatePresence>
         </div>
 
-        {/* --- LOAD MORE --- */}
         {visibleCount < filteredDesigns.length && (
           <div className="flex justify-center">
             <button 

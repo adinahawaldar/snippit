@@ -15,7 +15,6 @@ const Terms = () => {
   return (
     <div className="bg-[#050505] min-h-screen text-zinc-400 font-sans py-24 px-10 selection:bg-blue-500/30">
       
-      {/* 1. MINIMAL TOP BAR */}
       <div className="max-w-6xl mx-auto flex justify-between items-center mb-24">
         
         <div className="text-[10px] font-bold text-zinc-700 uppercase tracking-[0.5em]">System / Legal / v2.0</div>
@@ -23,7 +22,6 @@ const Terms = () => {
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20">
         
-        {/* 2. LATERAL NAVIGATION */}
         <aside className="lg:col-span-4 flex flex-col gap-12">
           <div>
             <h1 className="text-6xl font-black text-white italic tracking-tighter uppercase leading-[0.8] mb-4">Terms.</h1>
@@ -50,7 +48,6 @@ const Terms = () => {
           </div>
         </aside>
 
-        {/* 3. PROFESSIONAL CONTENT AREA */}
         <div className="lg:col-span-8">
           <motion.div 
             key={activeSection}
@@ -59,7 +56,6 @@ const Terms = () => {
             transition={{ duration: 0.4 }}
             className="bg-zinc-900/30 p-12 md:p-20 rounded-[3rem] border border-white/5 relative overflow-hidden"
           >
-            {/* Design Decoration */}
             <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
               <Scale size={200} />
             </div>

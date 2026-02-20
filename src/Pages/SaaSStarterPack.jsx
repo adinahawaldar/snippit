@@ -51,7 +51,6 @@ const SaaSLaunchpad = () => {
   return (
     <div className="bg-[#050505] min-h-screen py-24 px-6 text-zinc-400 font-sans selection:bg-blue-500/30">
       
-      {/* 1. SECTION HEADLINE */}
       <header className="max-w-7xl mx-auto mb-20">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
           <Sparkles size={12} className="text-blue-400" />
@@ -63,7 +62,6 @@ const SaaSLaunchpad = () => {
         </p>
       </header>
 
-      {/* 2. TEMPLATE GRID */}
       <main className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
         {starters.map((item) => (
           <motion.div 
@@ -72,7 +70,6 @@ const SaaSLaunchpad = () => {
             animate={{ opacity: 1, y: 0 }}
             className="group flex flex-col bg-zinc-900/50 border border-zinc-800 rounded-[2rem] overflow-hidden hover:border-blue-500/50 transition-all duration-500 shadow-2xl"
           >
-            {/* IMAGE AREA */}
             <div className="h-44 overflow-hidden relative">
               <img 
                 src={item.img} 
@@ -91,7 +88,6 @@ const SaaSLaunchpad = () => {
                 {item.desc}
               </p>
               
-              {/* BUTTON TO SEE WHOLE */}
               <button 
                 onClick={() => setSelectedTemplate(item)}
                 className="mt-auto w-full py-3 bg-zinc-800 hover:bg-white text-zinc-400 hover:text-black rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
@@ -103,7 +99,6 @@ const SaaSLaunchpad = () => {
         ))}
       </main>
 
-      {/* 3. FULL SCREEN PORTAL (TEMPLATE VIEW) */}
       <AnimatePresence>
         {selectedTemplate && (
           <motion.div 
@@ -112,7 +107,6 @@ const SaaSLaunchpad = () => {
             exit={{ opacity: 0, x: 100 }}
             className="fixed inset-0 z-[100] bg-black overflow-y-auto"
           >
-            {/* PREVIEW TOOLBAR */}
             <nav className="sticky top-0 w-full h-20 bg-black/80 backdrop-blur-xl border-b border-white/5 px-10 flex items-center justify-between z-50">
               <div className="flex items-center gap-4">
                 <button 
@@ -130,7 +124,6 @@ const SaaSLaunchpad = () => {
               </button>
             </nav>
 
-            {/* TEMPLATE CONTENT PLACEHOLDER */}
             <div className="pt-32 pb-20 px-10 max-w-6xl mx-auto text-center">
               <div className={`w-24 h-24 ${selectedTemplate.color} rounded-[2rem] mx-auto mb-10 shadow-2xl`} />
               <h1 className="text-7xl font-black text-white mb-8 tracking-tighter italic uppercase leading-none">
@@ -140,7 +133,6 @@ const SaaSLaunchpad = () => {
                 This template is pre-configured with the specific sections, animations, and color tokens for <span className="text-white italic">{selectedTemplate.name}</span>.
               </p>
               
-              {/* EXAMPLE SECTIONS */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="h-96 bg-zinc-900 rounded-[3rem] border border-white/5" />
                 <div className="h-96 bg-zinc-900 rounded-[3rem] border border-white/5" />
