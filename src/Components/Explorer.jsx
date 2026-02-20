@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   ArrowUpRight, Zap, Globe, Monitor, Layout, 
   Sparkles, Bot, BookOpen, Fingerprint, Activity 
@@ -203,8 +204,8 @@ const RegistryCard = ({ title, tag, icon, preview, link, color }) => {
 
         <h3 className="text-2xl font-bold text-white mb-6 tracking-tight group-hover:translate-x-1 transition-transform duration-500">{title}</h3>
 
-        <a 
-          href={link}
+        <Link
+          to={link}
           className="flex items-center justify-between p-4 rounded-2xl bg-zinc-900/50 border border-white/5 hover:bg-white hover:border-white transition-all duration-500 group/btn"
         >
           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 group-hover/btn:text-black">
@@ -213,7 +214,7 @@ const RegistryCard = ({ title, tag, icon, preview, link, color }) => {
           <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover/btn:bg-black/10 transition-colors">
             <ArrowUpRight size={16} className="text-zinc-500 group-hover/btn:text-black transition-all" />
           </div>
-        </a>
+        </Link>
       </div>
     </motion.div>
   );
