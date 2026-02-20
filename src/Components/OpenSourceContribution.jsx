@@ -44,9 +44,15 @@ const ContributionNexus = () => {
             <div className="py-3 flex flex-col items-center">
               <p className="text-zinc-500 text-xs md:text-sm uppercase tracking-widest font-medium">
                 Have a useful snippet or repo? 
-                <span className="text-white ml-2 cursor-pointer hover:text-purple-400 transition-colors underline decoration-purple-500/50 underline-offset-4">
-                  Submit it to Snippit.
-                </span>
+                <a
+  href="https://github.com/adinahawaldar/snippit" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="text-white ml-2 cursor-pointer hover:text-purple-400 transition-colors underline underline-offset-4 hover:decoration-purple-500/50"
+>
+  Submit it to Snippit.
+</a>
+
               </p>
             </div>
             <div className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent bottom-0" />
@@ -124,7 +130,15 @@ const ContributionNexus = () => {
                 </div>
                 <div className="text-left">
                   <p className="text-[9px] font-black text-zinc-400 uppercase tracking-widest">Connect GitHub</p>
-                  <p className="text-black font-bold text-lg md:text-xl tracking-tight leading-none">Initialize Contribution Flow</p>
+                  <a
+  href="https://github.com/adinahawaldar/snippit"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-black font-bold text-lg md:text-xl tracking-tight leading-none hover:underline"
+>
+  Initialize Contribution Flow
+</a>
+
                 </div>
               </div>
               <div className="w-12 h-12 flex items-center justify-center bg-black/5 rounded-full group-hover:bg-black group-hover:text-white transition-all">

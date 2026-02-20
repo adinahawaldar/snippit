@@ -12,6 +12,10 @@ import ResourceHub from './Pages/ResourceHub';
 import LicensePage from './Pages/LicensePage';
 import LandingPages from './Pages/LandingPages';
 import ProjectRegistry from './Pages/ProjectRegistry';
+import BackgroundsFX from './Pages/BackgroundsFX';
+import UIComponents from './Pages/UIComponents';
+import SaaSStarterPack from './Pages/SaaSStarterPack';
+import Terms from './Pages/Terms';
 
 
 const ScrollToTop = () => {
@@ -35,6 +39,11 @@ const App = () => {
         <Route path="/license-page" element={<LicensePage />} />
         <Route path="/landing-pages" element={<LandingPages />} />
         <Route path="/project-registry" element={<ProjectRegistry />} />
+        <Route path="/backgrounds" element={<BackgroundsFX />} />
+        <Route path="/uicomponents" element={<UIComponents />} />
+        <Route path="/saasstarter" element={<SaaSStarterPack />} />
+        <Route path="/terms"  element={<Terms/>}/>
+
 
 
       </Routes>

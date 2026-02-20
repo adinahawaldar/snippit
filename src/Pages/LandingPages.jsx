@@ -1,10 +1,22 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import autovion from "../assets/autovion.png";
+import artify from '../assets/artify.png'
+import TOTC from '../assets/TOTC.png'
+import Travelone from '../assets/Travelone.png'
+import Testnest from '../assets/Tastenest.png'
+import agrios from '../assets/agrios.png'
+import FoodDelivery from '../assets/FoodDelivery.png'
+import swiftpay from '../assets/swiftpay.png'
+import chatbot from '../assets/chatbot.png'
+
 import { 
   Figma, ExternalLink, Layout, 
   Fingerprint, Monitor, Smartphone, 
   Layers, MousePointer2, Plus
 } from 'lucide-react';
+import Footer from '../Components/Footer';
+import Navbar from '../Components/Navbar';
 
 const UIVault = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -12,58 +24,84 @@ const UIVault = () => {
 
   const categories = [
     { name: 'All', icon: <Layers size={12} /> },
-    { name: 'SaaS', icon: <Monitor size={12} /> },
+    { name: 'Website', icon: <Monitor size={12} /> },
     { name: 'Mobile', icon: <Smartphone size={12} /> },
     { name: 'Landing', icon: <Layout size={12} /> },
   ];
 
   const designs = [
     {
-      name: "Nexus Dashboard",
-      desc: "An obsidian-themed analytics interface for high-frequency trading.",
-      img: "https://images.unsplash.com/photo-1614332284683-51bbe302962f?q=80&w=800",
-      figma: "https://figma.com/",
-      live: "https://nexus-ui.com/",
-      category: "SaaS"
+      name: "Autovion",
+      desc: "An obsidian-themed analytics interface designed for an e-commerce automotive dashboard.",
+      img: autovion,
+      figma: "https://www.figma.com/design/xX2KTf91gwtdpHaCBSghlz/Autovion?node-id=0-1&t=fvh9ZwVyx3Omiu6M-1",
+      live: "https://www.figma.com/design/xX2KTf91gwtdpHaCBSghlz/Autovion?node-id=0-1&t=fvh9ZwVyx3Omiu6M-1",
+      category: "Landing"
     },
     {
-      name: "Aether Crypto",
-      desc: "Minimalist mobile wallet interface with biometric authentication flows.",
-      img: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?q=80&w=800",
-      figma: "https://figma.com/",
-      live: "https://aether.io/",
+      name: "TravelOne",
+      desc: "A vibrant travel website designed to inspire exploration with stunning destinations, seamless navigation, and immersive visual storytelling.",
+      img: Travelone,
+      figma: "https://www.figma.com/design/TWBUaRtPnImj70beAbz7Oo/TravelAgency?node-id=0-1&t=mXa8CzRHCF1Asgvb-1",
+      live: "https://www.figma.com/design/TWBUaRtPnImj70beAbz7Oo/TravelAgency?node-id=0-1&t=mXa8CzRHCF1Asgvb-1",
+      category: "Landing"
+    },
+    {
+      name: "Artify",
+      desc: "A visually immersive landing page crafted to showcase digital artwork with elegant layouts and fluid interactions.",
+      img: artify,
+      figma: "https://www.figma.com/design/xe3V32YLb8xSC1xzgDoxOi/Untitled?node-id=0-1&t=E1zqCHZfZ8WYekZz-1",
+      live: "https://www.figma.com/design/xe3V32YLb8xSC1xzgDoxOi/Untitled?node-id=0-1&t=E1zqCHZfZ8WYekZz-1",
+      category: "Landing"
+    },
+
+    {
+      name: "AI Chatbot",
+      desc: "A sleek AI chatbot mobile interface designed for intuitive conversations, smart responses, and a seamless user experience.",
+      img: chatbot,
+      figma: "https://www.figma.com/design/nlKnqvHrYveVxjQY3p0BTe/AI-chatbot-mobile-app-design-both-dark-and-light-mode--Community-?node-id=0-1&t=Ltx2P58WO5zJqcnp-1",
+      live: "https://www.figma.com/design/nlKnqvHrYveVxjQY3p0BTe/AI-chatbot-mobile-app-design-both-dark-and-light-mode--Community-?node-id=0-1&t=Ltx2P58WO5zJqcnp-1",
       category: "Mobile"
     },
     {
-      name: "Solstice Landing",
-      desc: "High-conversion product page for AI-driven hardware startups.",
-      img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800",
-      figma: "https://figma.com/",
-      live: "https://solstice.design/",
-      category: "Landing"
+      name: "TOTC",
+      desc: "A streamlined online study platform designed for interactive learning, personalized progress, and seamless course access.",
+      img: TOTC,
+      figma: "https://www.figma.com/design/OTDdvEx9q6LJfRd4FGOa7U/E-Learning-Site--Community-?node-id=0-1&t=YLOJmB9dq2oopcfE-1",
+      live: "https://www.figma.com/design/OTDdvEx9q6LJfRd4FGOa7U/E-Learning-Site--Community-?node-id=0-1&t=YLOJmB9dq2oopcfE-1",
+      category: "Website"
     },
     {
-      name: "Ghost Framework",
-      desc: "A developer-first component library with brutalist aesthetics.",
-      img: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800",
-      figma: "https://figma.com/",
-      live: "https://ghost.dev/",
-      category: "SaaS"
+      name: "Taste Nest",
+      desc: "A visually rich food website crafted to showcase menus, flavors, and seamless online ordering with an engaging user experience.",
+      img: Testnest,
+      figma: "https://www.figma.com/design/BWaeQOvlmZdrNdlQlzjwg0/65--Resturent-Website-templates--Community-?node-id=0-1&t=tguUumZTOn6Mtkck-1",
+      live: "https://www.figma.com/design/BWaeQOvlmZdrNdlQlzjwg0/65--Resturent-Website-templates--Community-?node-id=0-1&t=tguUumZTOn6Mtkck-1",
+      category: "Website"
     },
     {
-      name: "Vortex NFT",
-      desc: "Dark-mode marketplace focused on generative art collections.",
-      img: "https://images.unsplash.com/photo-1642104704074-907c0698bcd9?q=80&w=800",
-      figma: "https://figma.com/",
-      live: "https://vortex.art/",
-      category: "Landing"
+      name: "Agrios",
+      desc: " A clean agriculture website highlighting smart farming and sustainable solutions.",
+      img: agrios,
+      figma: "https://www.figma.com/design/hQwZRabfzqbIczrxmKzgFP/75--Agriculture-Landing-website-templates--Community-?node-id=0-1&t=x5Hcx5frQmlE2fRe-1",
+      live: "https://www.figma.com/design/hQwZRabfzqbIczrxmKzgFP/75--Agriculture-Landing-website-templates--Community-?node-id=0-1&t=x5Hcx5frQmlE2fRe-1",
+      category: "Website"
     },
     {
-      name: "Pulse Health",
-      desc: "Telemedicine mobile app focused on elderly accessibility.",
-      img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800",
-      figma: "https://figma.com/",
-      live: "https://pulse.app/",
+      name: "Foodly",
+      desc: "A sleek food app design focused on easy browsing, quick ordering, and delightful visuals.",
+      img: FoodDelivery,
+      figma: "https://www.figma.com/design/wxZ3D0YKmpa85B6zGuIXKH/Food-Delivery---Mobile-App-Design--Community-?node-id=23-309&t=hwaDiR5qgbfmTt8D-1",
+      live: "https://www.figma.com/design/wxZ3D0YKmpa85B6zGuIXKH/Food-Delivery---Mobile-App-Design--Community-?node-id=23-309&t=hwaDiR5qgbfmTt8D-1",
+      category: "Mobile"
+    },
+
+    {
+      name: "SwiftPay",
+      desc: "A secure payment app design enabling fast transactions and seamless money management.",
+      img: swiftpay,
+      figma: "https://www.figma.com/design/gs8j5L6hf7WahZzlUO9Uvb/Swift-Pay-Bank-UI---Mobile-Banking-App-Design--Community-?node-id=0-1&t=jT822oQ7RAr11A9k-1",
+      live: "https://www.figma.com/design/gs8j5L6hf7WahZzlUO9Uvb/Swift-Pay-Bank-UI---Mobile-Banking-App-Design--Community-?node-id=0-1&t=jT822oQ7RAr11A9k-1",
       category: "Mobile"
     }
   ];
@@ -73,6 +111,8 @@ const UIVault = () => {
     : designs.filter(d => d.category === activeCategory);
 
   return (
+    <>
+    <Navbar/>
     <div className="bg-[#050505] min-h-screen text-zinc-400 font-sans selection:bg-blue-500/30 relative">
       
       {/* --- BACKGROUND BLOOM --- */}
@@ -174,24 +214,17 @@ const UIVault = () => {
               className="group flex items-center gap-4 px-12 py-5 rounded-2xl border border-zinc-800 bg-zinc-900/50 text-zinc-400 text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all"
             >
               <Plus size={16} className="group-hover:rotate-90 transition-transform duration-300" /> 
-              Deploy More Units
+              Load More
             </button>
           </div>
         )}
 
-        {/* --- FOOTER REGISTRY --- */}
-        <footer className="mt-40 pt-10 border-t border-zinc-900 flex justify-between items-center opacity-30">
-          <div className="flex items-center gap-3">
-            <Fingerprint size={16} className="text-zinc-500" />
-            <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Design_Protocol_Registry</span>
-          </div>
-          <span className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase">
-            Snippit // Creative // 2026
-          </span>
-        </footer>
+        
 
       </main>
     </div>
+    <Footer/>
+    </>
   );
 };
 

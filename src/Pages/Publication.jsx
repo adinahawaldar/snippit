@@ -9,7 +9,6 @@ export const Publication = () => {
   return (
     <>
     <Navbar/>
-    {/* <PublicationsHero/> */}
     <ResearchPublication/>
           <CTA />
 

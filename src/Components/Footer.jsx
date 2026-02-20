@@ -40,9 +40,9 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
                {[
-                 { Icon: Github, link: "#" },
-                 { Icon: Twitter, link: "#" },
-                 { Icon: Linkedin, link: "#" }
+                 { Icon: Github, link: "https://github.com/adinahawaldar" },
+                 { Icon: Twitter, link: "https://x.com/adina_hawaldar" },
+                 { Icon: Linkedin, link: "https://www.linkedin.com/in/adina-hawaldar-17az6/" }
                ].map(({ Icon, link }, i) => (
                  <a key={i} href={link} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/[0.03] border border-white/[0.05] text-zinc-500 hover:text-blue-400 hover:border-blue-500/30 transition-all duration-300 shadow-xl">
                     <Icon size={18} />
@@ -54,19 +54,18 @@ const Footer = () => {
           {/* DYNAMIC LINK COLUMNS */}
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12">
             <FooterColumn title="Interfaces" links={[
-                { label: 'SaaS Startups', to: '/uivault' }, 
-                { label: 'Landing Pages', to: '/uivault' }, 
-                { label: 'UI Snippets', to: '/uivault' }
+                { label: 'SaaS Startups', to: '/saasstarter' }, 
+                { label: 'Landing Pages', to: '/landing-pages' }, 
+                { label: 'UI Snippets', to: '/uicomponents' }
             ]} />
             <FooterColumn title="Development" links={[
-                { label: 'AI Toolkit', to: '/projects' }, 
-                { label: 'Open Source', to: '/projects' }, 
-                { label: 'Vanguard Wins', to: '/achievements' }
+                { label: 'AI Toolkit', to: '/ai-toolkit' }, 
+                { label: 'Open Source', to: '/project-registry' }, 
+                { label: 'Publications', to: '/publication' }
             ]} />
             <FooterColumn title="System" links={[
-                { label: 'Publications', to: '/research' },
-                { label: 'About Adina', to: '/about' },
-                { label: 'License_Key', to: '/licensepage' }, 
+                { label: 'About', to: '/about' },
+                { label: 'License Key', to: '/license-page' }, 
                 { label: 'Terms', to: '/terms' }
             ]} />
           </div>

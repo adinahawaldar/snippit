@@ -47,9 +47,7 @@ const FloatingCTA = () => {
 
           {/* Main Action Text */}
           <div className="text-center mb-12">
-            <h3 className="text-blue-500 font-mono text-[10px] uppercase tracking-[0.5em] mb-4 font-bold">
-              Protocol_Finalization
-            </h3>
+            
             <p className="text-white text-2xl md:text-4xl font-bold tracking-tighter max-w-xl leading-tight">
               Infrastructure for <br /> 
               <span className="text-zinc-600 italic font-medium">modern development workflows.</span>
@@ -59,10 +57,21 @@ const FloatingCTA = () => {
           {/* --- THE BUTTONS --- */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center relative z-20">
             <button className="group relative w-full sm:w-auto px-10 py-4 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-[1.02] active:scale-[0.98]">
-              <span className="flex items-center justify-center gap-3">
-                Explore Resources
-                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-              </span>
+              <span
+  onClick={() =>
+    document.getElementById("Explorer")?.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
+  className="flex items-center justify-center gap-3 cursor-pointer"
+>
+  Explore Resources
+  <ArrowRight
+    size={14}
+    className="transition-transform group-hover:translate-x-1"
+  />
+</span>
+
             </button>
             
             <button
@@ -73,17 +82,7 @@ const FloatingCTA = () => {
             </button>
           </div>
 
-          {/* Technical Metadata Footer */}
-          <div className="mt-16 flex items-center gap-6 opacity-30 group-hover:opacity-50 transition-opacity">
-            <div className="flex items-center gap-2 text-[8px] font-mono text-white">
-              <span className="w-1 h-1 rounded-full bg-blue-500 animate-pulse" />
-              STATUS: REGISTRY_SYNC_COMPLETE
-            </div>
-            <div className="h-3 w-[1px] bg-white/20" />
-            <div className="text-[8px] font-mono text-white tracking-widest uppercase">
-              Build_v1.0.42
-            </div>
-          </div>
+         
         </div>
 
         {/* Inner Border Reflection */}

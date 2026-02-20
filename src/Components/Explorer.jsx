@@ -47,7 +47,7 @@ const ProductExplorer = () => {
             tag="Templates"
             color="blue"
             icon={<Zap size={16} />}
-            link="/starters"
+            link="/saasstarter"
             preview={
               <div className="relative w-full h-full flex flex-col gap-2 p-2">
                 <div className="flex gap-1 mb-1">
@@ -109,7 +109,7 @@ const ProductExplorer = () => {
             tag="Components"
             color="purple"
             icon={<Layout size={16} />}
-            link="/ui-snippets"
+            link="/uicomponents"
             preview={
               <div className="relative w-full h-full flex flex-col items-center justify-center gap-3">
                 <div className="px-4 py-2 bg-zinc-900 border border-purple-500/30 rounded-lg shadow-[0_0_20px_rgba(168,85,247,0.15)]">
