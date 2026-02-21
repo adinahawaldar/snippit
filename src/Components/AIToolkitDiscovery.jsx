@@ -150,23 +150,7 @@ const AIToolkitDiscovery = () => {
     <div className="bg-[#020202] min-h-screen text-white font-sans selection:bg-blue-500/30">
       
 
-      {/* --- TOP NAV --- */}
-      {/* <nav className="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-xl border-b border-white/5 bg-black/40">
-        <div className="flex items-center gap-6">
-          <button onClick={() => window.history.back()} className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-white transition-colors">
-            ← Exit Registry
-          </button>
-          <div className="h-4 w-px bg-white/10" />
-          <div className="flex items-center gap-2">
-            <Sparkles size={14} className="text-blue-500" />
-            <span className="text-xs font-bold uppercase tracking-widest italic">Node Discovery</span>
-          </div>
-        </div>
-        <div className="hidden md:flex items-center gap-4 px-4 py-2 bg-white/5 border border-white/10 rounded-xl">
-          <Search size={14} className="text-zinc-500" />
-          <input placeholder="Filter tools..." className="bg-transparent border-none focus:ring-0 text-[11px] w-40" />
-        </div>
-      </nav> */}
+      
 
       <div className="flex pt-20">
         {/* --- SIDEBAR --- */}

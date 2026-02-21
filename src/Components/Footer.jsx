@@ -26,9 +26,7 @@ const Footer = () => {
           
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-8 group">
-              <div className="h-10 w-10 flex items-center justify-center bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-xl group-hover:border-blue-500/50 transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)]">
-                <Fingerprint size={20} />
-              </div>
+              
               <span className="text-xl font-bold tracking-tighter text-white uppercase italic">Snippit<span className="text-blue-500">.</span></span>
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed mb-8 max-w-sm">
