@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"; 
 import { motion } from 'framer-motion';
-import { Github, Twitter, Linkedin, ChevronUp, Command, Globe, Activity, Fingerprint, Cpu, Layout } from 'lucide-react';
+import { Github, Twitter, Linkedin, ChevronUp, Command, Activity, Cpu } from 'lucide-react';
 
 const Footer = () => {
   const [time, setTime] = useState(new Date());
@@ -12,22 +12,21 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="relative w-full py-20 px-6 overflow-hidden">
+    <footer className="relative w-full py-12 md:py-20 px-6 overflow-hidden bg-[#050505]">
+      {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[#050505] z-0" />
-      
-      <div className="absolute inset-0 bg-[#050505] z-[-1]" />
-
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
            style={{ backgroundImage: `radial-gradient(#3b82f6 1px, transparent 0)`, backgroundSize: '30px 30px' }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
-          
+        {/* Top Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16 md:mb-24">
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-8 group">
-              
-              <span className="text-xl font-bold tracking-tighter text-white uppercase italic">Snippit<span className="text-blue-500">.</span></span>
+              <span className="text-xl font-bold tracking-tighter text-white uppercase italic">
+                Snippit<span className="text-blue-500">.</span>
+              </span>
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed mb-8 max-w-sm">
               The unified registry for high-performance UI components, AI frameworks, and architectural research.
@@ -38,14 +37,15 @@ const Footer = () => {
                  { Icon: Twitter, link: "https://x.com/adina_hawaldar" },
                  { Icon: Linkedin, link: "https://www.linkedin.com/in/adina-hawaldar-17az6/" }
                ].map(({ Icon, link }, i) => (
-                 <a key={i} href={link} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/[0.03] border border-white/[0.05] text-zinc-500 hover:text-blue-400 hover:border-blue-500/30 transition-all duration-300 shadow-xl">
+                 <a key={i} href={link} target="_blank" rel="noopener noreferrer" 
+                    className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/[0.03] border border-white/[0.05] text-zinc-500 hover:text-blue-400 hover:border-blue-500/30 transition-all duration-300 shadow-xl">
                     <Icon size={18} />
                  </a>
                ))}
             </div>
           </div>
 
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12">
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-12">
             <FooterColumn title="Interfaces" links={[
                 { label: 'SaaS Startups', to: '/saasstarter' }, 
                 { label: 'Landing Pages', to: '/landing-pages' }, 
@@ -64,29 +64,31 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Status Bar - Refined for Mobile Alignment */}
         <div className="relative p-[1px] rounded-2xl bg-gradient-to-r from-blue-500/20 via-zinc-800 to-amber-500/20 mb-12 shadow-2xl">
-          <div className="flex flex-wrap items-center justify-between gap-6 px-8 py-5 bg-[#0a0a0a] rounded-[calc(1rem-1px)]">
+          <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 px-6 py-6 lg:px-8 lg:py-5 bg-[#0a0a0a] rounded-[calc(1rem-1px)]">
             
-            <div className="flex items-center gap-10">
+            {/* Grid inside status bar for mobile alignment */}
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:flex items-center gap-y-6 lg:gap-10">
               <StatusItem icon={<Activity size={14} className="text-emerald-500"/>} label="Network" value="Encrypted" />
               <StatusItem icon={<Cpu size={14} className="text-blue-500"/>} label="AI_Node" value="Operational" />
               <StatusItem icon={<Command size={14} className="text-amber-500"/>} label="Registry" value="Public_Access" />
             </div>
 
-            <div className="hidden md:flex flex-col items-end border-l border-zinc-900 pl-10">
+            <div className="flex flex-col items-start lg:items-end lg:border-l border-zinc-900 lg:pl-10 pt-4 lg:pt-0 border-t lg:border-t-0">
               <span className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest mb-1">Live_Sync_Time</span>
               <span className="text-xs font-mono text-zinc-400 tracking-tighter">{time.toLocaleTimeString()}</span>
             </div>
-
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-zinc-900 pt-10">
-          <p className="text-[10px] font-mono text-zinc-700 uppercase tracking-[0.4em]">
+        {/* Bottom Section */}
+        <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-8 border-t border-zinc-900 pt-10">
+          <p className="text-[10px] font-mono text-zinc-700 uppercase tracking-[0.4em] text-center md:text-left">
             © 2026 Developed by <Link to="/about" className="hover:text-white transition-colors underline decoration-blue-500/30 underline-offset-8">Adina Hawaldar</Link>
           </p>
           
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
             <Link to="/privacy" className="text-[10px] font-bold text-zinc-600 hover:text-white uppercase tracking-widest transition-colors">Privacy_Protocol</Link>
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -96,7 +98,6 @@ const Footer = () => {
             </button>
           </div>
         </div>
-
       </div>
 
       <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
@@ -105,7 +106,7 @@ const Footer = () => {
 };
 
 const FooterColumn = ({ title, links }) => (
-  <div className="flex flex-col gap-6">
+  <div className="flex flex-col gap-5 md:gap-6">
     <h4 className="text-[11px] font-black text-white uppercase tracking-[0.3em] flex items-center gap-2">
       <div className="w-1 h-1 bg-blue-500 rounded-full" /> {title}
     </h4>
@@ -122,11 +123,11 @@ const FooterColumn = ({ title, links }) => (
 );
 
 const StatusItem = ({ icon, label, value }) => (
-  <div className="flex items-center gap-4">
-    <div className="p-2 bg-zinc-900 border border-white/5 rounded-lg shadow-inner">{icon}</div>
+  <div className="flex items-center gap-4 min-w-[140px]">
+    <div className="p-2 bg-zinc-900 border border-white/5 rounded-lg shadow-inner flex-shrink-0">{icon}</div>
     <div className="flex flex-col">
       <span className="text-[9px] font-mono text-zinc-600 uppercase tracking-tight mb-1">{label}</span>
-      <span className="text-[11px] font-black text-zinc-300 uppercase tracking-tighter">{value}</span>
+      <span className="text-[11px] font-black text-zinc-300 uppercase tracking-tighter whitespace-nowrap">{value}</span>
     </div>
   </div>
 );

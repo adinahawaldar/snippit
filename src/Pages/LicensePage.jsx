@@ -101,15 +101,7 @@ const LicensePage = () => {
             </div>
           </section>
 
-          <footer className="mt-20 pt-8 border-t border-zinc-900 flex justify-between items-center opacity-30">
-            <div className="flex items-center gap-3">
-              <Fingerprint size={16} />
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Legal_Archive_Node</span>
-            </div>
-            <span className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase">
-              Snippit Framework // 2026
-            </span>
-          </footer>
+          
         </main>
       </div>
       <Footer />

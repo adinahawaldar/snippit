@@ -48,11 +48,7 @@ const AboutRegistry = () => {
             
             <div className="lg:col-span-5 space-y-12">
               <section>
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3 mb-6">
-                  <Fingerprint size={16} className="text-blue-500" />
-                  <div className="h-[1px] w-8 bg-zinc-800" />
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Ident: 882-Alpha</span>
-                </motion.div>
+                
 
                 <motion.h1 
                   initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -138,12 +134,8 @@ const AboutRegistry = () => {
 
           <footer className="mt-24 pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6 opacity-40 hover:opacity-100 transition-opacity">
             <div className="flex items-center gap-3">
-              <Globe size={14} className="text-zinc-500" />
-              <span className="text-[9px] font-mono uppercase tracking-[0.4em] text-zinc-500">Global_Registry // SNIPPIT_HUB</span>
             </div>
-            <p className="text-[9px] font-mono text-zinc-500 tracking-widest uppercase">
-              Secure Access // © 2026 Adina Hawaldar
-            </p>
+            
           </footer>
         </main>
       </div>
